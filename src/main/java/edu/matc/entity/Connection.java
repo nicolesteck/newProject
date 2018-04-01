@@ -22,12 +22,23 @@ public class Connection {
     private String notes;
 
 
+
+    @ManyToOne
+    private User user;
+
+    @Column(name="linkedIn_id")
+    private String linkedInId;
+
+
     public Connection() {
     }
 
-    public Connection(String interests, String notes) {
+    public Connection(String interests, String notes, User user, String linkedInId) {
+
         this.interests = interests;
         this.notes = notes;
+        this.user = user;
+        this.linkedInId = linkedInId;
     }
 
     public int getId() {
@@ -52,5 +63,25 @@ public class Connection {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Connection that = (Connection) o;
+
+        if (id != that.id) return false;
+        if (interests != null ? !interests.equals(that.interests) : that.interests != null) return false;
+        return notes != null ? notes.equals(that.notes) : that.notes == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (interests != null ? interests.hashCode() : 0);
+        result = 31 * result + (notes != null ? notes.hashCode() : 0);
+        return result;
     }
 }

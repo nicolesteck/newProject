@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="annotator@localhost">
+<dataSource name="test_annotator@localhost">
   <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
     <root id="1"/>
-    <schema id="2" parent="1" name="annotator">
+    <schema id="2" parent="1" name="test_annotator">
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
-    <schema id="3" parent="1" name="concertPlanner"/>
-    <schema id="4" parent="1" name="information_schema"/>
-    <schema id="5" parent="1" name="li_annotate"/>
-    <schema id="6" parent="1" name="li_test"/>
-    <schema id="7" parent="1" name="mysql"/>
-    <schema id="8" parent="1" name="performance_schema"/>
-    <schema id="9" parent="1" name="sample"/>
-    <schema id="10" parent="1" name="sys"/>
-    <schema id="11" parent="1" name="test_concertPlanner"/>
-    <schema id="12" parent="1" name="test_sample"/>
-    <schema id="13" parent="1" name="test_annotator"/>
+    <schema id="3" parent="1" name="annotator"/>
+    <schema id="4" parent="1" name="concertPlanner"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="li_annotate"/>
+    <schema id="7" parent="1" name="li_test"/>
+    <schema id="8" parent="1" name="mysql"/>
+    <schema id="9" parent="1" name="performance_schema"/>
+    <schema id="10" parent="1" name="sample"/>
+    <schema id="11" parent="1" name="sys"/>
+    <schema id="12" parent="1" name="test_concertPlanner"/>
+    <schema id="13" parent="1" name="test_sample"/>
     <table id="14" parent="2" name="connections"/>
     <table id="15" parent="2" name="role"/>
     <table id="16" parent="2" name="user"/>
@@ -54,7 +54,7 @@
     </key>
     <foreign-key id="24" parent="14" name="fk_connections_user">
       <ColNames>user_id</ColNames>
-      <RefSchemaName>annotator</RefSchemaName>
+      <RefSchemaName>test_annotator</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>

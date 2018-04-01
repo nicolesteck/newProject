@@ -3,7 +3,9 @@ package edu.matc.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 //import java.util.Objects;
 
 @Entity(name = "user")
@@ -26,6 +28,9 @@ public class User {
 
     @Column(name="password")
     private String password;
+
+    @OneToMany(mappedBy="user", cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
+    private Set<Connection> connections = new HashSet<>();
 
     // role
 

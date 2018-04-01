@@ -43,4 +43,20 @@ public class ConnectionDaoTest {
         List<Connection> connections = (List<Connection>)genericDao.getAll();
         assertEquals(4, connections.size());
     }
+    /**
+     * Insert success.
+     */
+    @Test
+    void insertSuccess() {
+        GenericDao<User> userDao = new GenericDao<>(User.class);
+
+        User user = userDao.getById(1);
+        Connection newCon = new Connection("Dogs","Likes dogs", user, "3241234");
+        int id = genericDao.insert(newCon);
+        assertNotEquals(0,id);
+        Connection insertedCon = (Connection)genericDao.getById(id);
+        assertEquals(newCon, insertedCon);
+
+    }
+
 }
