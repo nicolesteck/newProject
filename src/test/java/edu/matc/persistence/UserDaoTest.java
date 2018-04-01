@@ -67,18 +67,18 @@ class UserDaoTest {
 //        assertEquals(thisUser, thatUser);
 //    }
 //
-//    /**
-//     * Insert success.
-//     */
-//    @Test
-//    void insertSuccess() {
-//        User newUser = new User("Joe", "Trebek");
-//        int id = genericDao.insert(newUser);
-//        assertNotEquals(0,id);
-//        User insertedUser = (User)genericDao.getById(id);
-//        assertEquals(newUser, insertedUser);
-//
-//    }
+    /**
+     * Insert success.
+     */
+    @Test
+    void insertSuccess() {
+        User newUser = new User("Joe", "Trebek","jtrebek@gmail","supersecure");
+        int id = genericDao.insert(newUser);
+        assertNotEquals(0,id);
+        User insertedUser = (User)genericDao.getById(id);
+        assertEquals(newUser, insertedUser);
+
+    }
 //
 //    /**
 //     * Insert with connection success.
