@@ -99,15 +99,15 @@ class UserDaoTest {
 //        assertEquals(newUser, insertedUser);
 //
 //    }
-//
-//    /**
-//     * Delete success.
-//     */
-//    @Test
-//    void deleteSuccess() {
-//        genericDao.delete(genericDao.getById(5));
-//        assertNull(genericDao.getById(5));
-//    }
+
+    /**
+     * Delete success.
+     */
+    @Test
+    void deleteSuccess() {
+        genericDao.delete(genericDao.getById(3));
+        assertNull(genericDao.getById(3));
+    }
 //
 //
 //    /**

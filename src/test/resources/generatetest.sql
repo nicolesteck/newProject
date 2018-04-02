@@ -17,5 +17,5 @@ insert into user(id,first_name,last_name,email,password) values (2, "jane","doe"
 insert into user(id,first_name,last_name,email,password) values (3, "joasdfasdfan","smiasdfasdfth","jsmith@gmaiasdfl.com","password");
 insert into connections (id,linkedIn_id, interests, notes, user_id) values (1, "1stewtaw1", "cats and dogs", "likes animals", 1);
 insert into connections (id,linkedIn_id, interests, notes, user_id) values (2, "1sefgtl22", "cats and giraffes and dogs", "likes animals", 2);
-insert into connections (id,linkedIn_id, interests, notes, user_id) values (3, "125524ll1", "cats faces' but not dogs", "likes animals and stuff", 3);
+insert into connections (id,linkedIn_id, interests, notes, user_id) values (3, "125524ll1", "cats faces' but not dogs", "likes animals and stuff", 1);
 insert into connections (id,linkedIn_id, interests, notes, user_id) values (4, "1352dfaw1", "cats", "likes few animals", 2);
