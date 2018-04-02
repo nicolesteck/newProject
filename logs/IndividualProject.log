@@ -1,1 +1,3 @@
 [INFO ] 2018-04-01 18:59:44.532 [main] UserDaoTest - BeforeEach
+[INFO ] 2018-04-01 19:01:24.072 [main] UserDaoTest - BeforeEach
+[DEBUG] 2018-04-01 19:01:27.371 [main] GenericDao - Searching for lastName = Rasmussen

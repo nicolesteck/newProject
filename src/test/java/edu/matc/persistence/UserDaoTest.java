@@ -108,18 +108,18 @@ class UserDaoTest {
         genericDao.delete(genericDao.getById(3));
         assertNull(genericDao.getById(3));
     }
-//
-//
-//    /**
-//     * Gets by property equal success.
-//     */
-//    @Test
-//    void getByPropertyEqualSuccess() {
-//        List<User> users = (List<User>) genericDao.getByPropertyEqual("lastName", "Hensen");
-//        assertEquals(1, users.size());
-//        assertEquals(2, users.get(0).getId());
-//    }
-//
+
+
+    /**
+     * Gets by property equal success.
+     */
+    @Test
+    void getByPropertyEqualSuccess() {
+        List<User> users = (List<User>) genericDao.getByPropertyEqual("lastName", "Rasmussen");
+        assertEquals(1, users.size());
+        assertEquals(3, users.get(0).getId());
+    }
+
 //    /**
 //     * Gets by property like.
 //     */
