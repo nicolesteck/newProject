@@ -1,1 +1,9 @@
-[INFO ] 2018-04-01 19:39:32.970 [http-nio-8080-exec-5] AllConnections - In the doGet of allConnections
+[DEBUG] 2018-04-01 20:18:38.082 [http-nio-8080-exec-1] AllConnections - dao.getAll what is this?: [edu.matc.entity.Connection@1f462cf1]
+[INFO ] 2018-04-01 20:19:15.895 [main] UserDaoTest - BeforeEach
+[DEBUG] 2018-04-01 20:26:14.557 [http-nio-8080-exec-9] GenericDao - Searching for Connection with firstName = J
+[DEBUG] 2018-04-01 20:28:40.866 [http-nio-8080-exec-3] GenericDao - Searching for Connection with firstName = J
+[DEBUG] 2018-04-01 20:32:21.840 [http-nio-8080-exec-2] GenericDao - Searching for Connection with firstName = J
+[DEBUG] 2018-04-01 20:32:21.999 [http-nio-8080-exec-2] AllConnections - USERdao.getByPropertyLike what is this?: [edu.matc.entity.User@b8b3a8a3, edu.matc.entity.User@c87af8e0]
+[DEBUG] 2018-04-01 20:35:45.852 [http-nio-8080-exec-5] GenericDao - Searching for Connection with firstName = J
+[DEBUG] 2018-04-01 20:35:45.995 [http-nio-8080-exec-5] AllConnections - USERdao.getByPropertyLike what is this?: jsmith@gmail.com
+[DEBUG] 2018-04-01 20:46:48.424 [http-nio-8080-exec-3] AllConnections - USERdao.getAll what is this?: User{id=1, firstName='joan', lastName='smith', email='jsmith@gmail.com', password='password'}

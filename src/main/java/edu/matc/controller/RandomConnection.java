@@ -35,7 +35,7 @@ public class RandomConnection extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        GenericDao dao = new GenericDao(Connection.class);
+        GenericDao<Connection> dao = new GenericDao<>(Connection.class);
         req.setAttribute("connections", dao.getRandom());
         RequestDispatcher dispatcher = req.getRequestDispatcher("/randomConnection.jsp");
         dispatcher.forward(req, resp);

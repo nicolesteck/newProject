@@ -41,20 +41,25 @@
                             <table>
                                 <tr>
                                     <th>
+
                                         <td>First</td>
                                         <td>Last</td>
-                                        <td>Connections</td>
-                                        <td>Summary</td>
+                                    <!--
+                                       <td>Connections</td>
+                                      <td>Summary</td>
+                                   -->
+                                        <td>Interests</td>
+                                        <td>Notes</td>
                                     </th>
                                 </tr>
-                                <c:forEach var="connection" items="${connections}">
+                                <c:forEach var="curr" items="${connections}">
                                     <tr>
-                                    <%--
-                                        <td>${connection.user.firstName}</td>
-                                        <td>${connection.user.lastName}</td>
-                                    --%>
-                                        <td>${connection.interests}</td>
-                                        <td>${connection.notes}</td>
+
+                                        <td>${curr.user.firstName}</td>
+                                        <td>${curr.user.lastName}</td>
+
+                                        <td>${curr.interests}</td>
+                                        <td>${curr.notes}</td>
                                     </tr>
 
                                 </c:forEach>

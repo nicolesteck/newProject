@@ -84,4 +84,15 @@ public class Connection {
         result = 31 * result + (notes != null ? notes.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Connection{" +
+                "id=" + id +
+                ", interests='" + interests + '\'' +
+                ", notes='" + notes + '\'' +
+                ", user=" + user +
+                ", linkedInId='" + linkedInId + '\'' +
+                '}';
+    }
 }

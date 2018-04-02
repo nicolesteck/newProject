@@ -1,6 +1,7 @@
 package edu.matc.controller;
 
 import edu.matc.entity.Connection;
+import edu.matc.entity.User;
 import edu.matc.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -35,8 +36,10 @@ public class AllConnections extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        GenericDao dao = new GenericDao(Connection.class);
+        GenericDao<Connection> dao = new GenericDao<>(Connection.class);
+        GenericDao<User> userDao = new GenericDao<>(User.class);
         req.setAttribute("connections", dao.getAll());
+        logger.debug("USERdao.getAll what is this?: " + userDao.getAll().get(0));
         RequestDispatcher dispatcher = req.getRequestDispatcher("/allConnections.jsp");
         dispatcher.forward(req, resp);
         logger.info("In the doGet of allConnections");
