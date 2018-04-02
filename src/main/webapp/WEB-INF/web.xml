@@ -13,7 +13,7 @@
         </form-login-config>
     </login-config>
 
-    <!-- Protect the user search page. -->
+    <!-- Protect the user search page.
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>home</web-resource-name>
@@ -32,4 +32,6 @@
     <security-role>
         <role-name>user</role-name>
     </security-role>
+
+    -->
 </web-app>

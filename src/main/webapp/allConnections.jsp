@@ -24,7 +24,7 @@
                             <header>
                                 <h3>LEFT SIDEBAR</h3>
                             </header>
-                            <c:import url="/actionItems"/>
+
                         </section>
                     </div>
 
@@ -49,13 +49,16 @@
                                 </tr>
                                 <c:forEach var="connection" items="${connections}">
                                     <tr>
-                                        <td>${connection.firstName}</td>
-                                        <td>${connection.lastName}</td>
-                                        <td>${connection.numberOfConnections}</td>
-                                        <td>${connection.summary}</td>
+                                    <%--
+                                        <td>${connection.user.firstName}</td>
+                                        <td>${connection.user.lastName}</td>
+                                    --%>
+                                        <td>${connection.interests}</td>
+                                        <td>${connection.notes}</td>
                                     </tr>
 
                                 </c:forEach>
+
 
                             </table>
                         </section>
