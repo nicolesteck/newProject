@@ -120,15 +120,15 @@ class UserDaoTest {
         assertEquals(3, users.get(0).getId());
     }
 
-//    /**
-//     * Gets by property like.
-//     */
-//    @Test
-//    void getByPropertyLike() {
-//        List<User> users = (List<User>) genericDao.getByPropertyLike("firstName", "ar");
-//        assertEquals(2, users.size());
-//    }
-//
+    /**
+     * Gets by property like.
+     */
+    @Test
+    void getByPropertyLike() {
+        List<User> users = (List<User>) genericDao.getByPropertyLike("firstName", "ja");
+        assertEquals(2, users.size());
+    }
+
 
 
 

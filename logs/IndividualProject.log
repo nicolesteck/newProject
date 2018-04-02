@@ -1,3 +1,7 @@
 [INFO ] 2018-04-01 18:59:44.532 [main] UserDaoTest - BeforeEach
 [INFO ] 2018-04-01 19:01:24.072 [main] UserDaoTest - BeforeEach
 [DEBUG] 2018-04-01 19:01:27.371 [main] GenericDao - Searching for lastName = Rasmussen
+[INFO ] 2018-04-01 19:06:11.213 [main] UserDaoTest - BeforeEach
+[DEBUG] 2018-04-01 19:06:14.212 [main] GenericDao - Searching for Connection with firstName = J
+[INFO ] 2018-04-01 19:06:54.422 [main] UserDaoTest - BeforeEach
+[DEBUG] 2018-04-01 19:06:57.703 [main] GenericDao - Searching for Connection with firstName = ja
