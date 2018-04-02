@@ -59,4 +59,17 @@ public class ConnectionDaoTest {
 
     }
 
+    /**
+     * Save or update.
+     */
+    @Test // Genericized
+    void saveOrUpdate() {
+        String newInterests = "Watching movies";
+        Connection thisConnection = (Connection)genericDao.getById(3);
+        thisConnection.setInterests(newInterests);
+        genericDao.saveOrUpdate(thisConnection);
+        Connection thatConnection = (Connection)genericDao.getById(3);
+        assertEquals(thisConnection, thatConnection);
+    }
+
 }

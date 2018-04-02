@@ -5,3 +5,9 @@
 [DEBUG] 2018-04-01 19:06:14.212 [main] GenericDao - Searching for Connection with firstName = J
 [INFO ] 2018-04-01 19:06:54.422 [main] UserDaoTest - BeforeEach
 [DEBUG] 2018-04-01 19:06:57.703 [main] GenericDao - Searching for Connection with firstName = ja
+[INFO ] 2018-04-01 19:10:29.294 [main] ConnectionDaoTest - BeforeEach
+[INFO ] 2018-04-01 19:10:29.320 [main] ConnectionDaoTest - hi
+[INFO ] 2018-04-01 19:13:03.116 [main] ConnectionDaoTest - BeforeEach
+[INFO ] 2018-04-01 19:13:03.138 [main] ConnectionDaoTest - hi
+[INFO ] 2018-04-01 19:13:20.686 [main] ConnectionDaoTest - BeforeEach
+[INFO ] 2018-04-01 19:13:20.713 [main] ConnectionDaoTest - hi
