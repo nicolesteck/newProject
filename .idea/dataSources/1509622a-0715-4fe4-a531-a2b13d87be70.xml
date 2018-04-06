@@ -72,51 +72,64 @@
       <Position>3</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <index id="28" parent="15" name="email_UNIQUE">
+    <column id="28" parent="15" name="user_id">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="29" parent="15" name="email_UNIQUE">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="29" parent="15" name="PRIMARY">
+    <index id="30" parent="15" name="role_user_id_fk">
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="31" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="30" parent="15" name="email_UNIQUE">
+    <key id="32" parent="15" name="email_UNIQUE">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>email_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="31" parent="16" name="id">
+    <foreign-key id="33" parent="15" name="role_user_id_fk">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>annotator</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="34" parent="16" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="32" parent="16" name="first_name">
+    <column id="35" parent="16" name="first_name">
       <Position>2</Position>
       <DataType>varchar(25)|0</DataType>
     </column>
-    <column id="33" parent="16" name="last_name">
+    <column id="36" parent="16" name="last_name">
       <Position>3</Position>
       <DataType>varchar(30)|0</DataType>
     </column>
-    <column id="34" parent="16" name="email">
+    <column id="37" parent="16" name="email">
       <Position>4</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="35" parent="16" name="password">
+    <column id="38" parent="16" name="password">
       <Position>5</Position>
       <DataType>varchar(30)|0</DataType>
     </column>
-    <index id="36" parent="16" name="users_user_name_uindex">
+    <index id="39" parent="16" name="users_user_name_uindex">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="37" parent="16" name="PRIMARY">
+    <key id="40" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="38" parent="16" name="users_user_name_uindex">
+    <key id="41" parent="16" name="users_user_name_uindex">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_user_name_uindex</UnderlyingIndexName>
     </key>
