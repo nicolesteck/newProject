@@ -7,3 +7,9 @@
 [DEBUG] 2018-04-01 20:35:45.852 [http-nio-8080-exec-5] GenericDao - Searching for Connection with firstName = J
 [DEBUG] 2018-04-01 20:35:45.995 [http-nio-8080-exec-5] AllConnections - USERdao.getByPropertyLike what is this?: jsmith@gmail.com
 [DEBUG] 2018-04-01 20:46:48.424 [http-nio-8080-exec-3] AllConnections - USERdao.getAll what is this?: User{id=1, firstName='joan', lastName='smith', email='jsmith@gmail.com', password='password'}
+[INFO ] 2018-04-05 19:20:02.740 [http-nio-8080-exec-7] RandomConnection - In the doGet of randomConnection
+[INFO ] 2018-04-05 19:20:16.661 [http-nio-8080-exec-7] RandomConnection - In the doGet of randomConnection
+[INFO ] 2018-04-05 22:07:15.487 [http-nio-8080-exec-8] AllUsers - In the doGet of allUsers
+[DEBUG] 2018-04-05 22:07:41.661 [http-nio-8080-exec-10] AllConnections - USERdao.getAll what is this?: User{id=1, firstName='joan', lastName='smith', email='jsmith@gmail.com', password='password'}
+[DEBUG] 2018-04-06 14:09:13.560 [http-nio-8080-exec-5] AllConnections - USERdao.getAll what is this?: User{id=1, firstName='joan', lastName='smith', email='jsmith@gmail.com', password='password'}
+[INFO ] 2018-04-06 14:09:18.481 [http-nio-8080-exec-6] AllUsers - In the doGet of allUsers
