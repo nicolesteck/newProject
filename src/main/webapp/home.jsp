@@ -57,6 +57,7 @@
                 tool created by Nicole Steck for Madison Area Technical College's
                 Enterprise Java class, taught by Paula Waite. Spring 2018.
                 .</p>
+            <h3><a href="importConnections">Import Your Connections!</a></h3>
 
           <!--
             <footer>
