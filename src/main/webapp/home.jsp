@@ -13,7 +13,7 @@
             <ul>
                 <li class="current"><a href="index.jsp">Welcome</a></li>
                 <li class="submenu">
-                <li><a href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=789qxnkiciz8ny&redirect_uri=http://localhost:8080/nsindieproject/linkedInLogin&scope=r_basicprofile%20r_emailaddress">Sign In with LI</a></li>
+                <li><a href="/nsindieproject/callApi">import connections</a></li>
                 <li><a href="allUsers" class="button special">View All Users</a></li>
                 <li><a href="allConnections" class="button">View All Connections</a></li>
 
@@ -57,7 +57,7 @@
                 tool created by Nicole Steck for Madison Area Technical College's
                 Enterprise Java class, taught by Paula Waite. Spring 2018.
                 .</p>
-            <h3><a href="importConnections">Import Your Connections!</a></h3>
+            <h3><a href="https://my.api.mockaroo.com/Connections.json?key=9638ae60&redirect=localhost:8080/nsindieproject/importConnections">Import Your Connections!</a></h3>
 
           <!--
             <footer>

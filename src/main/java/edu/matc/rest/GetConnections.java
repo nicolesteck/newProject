@@ -23,6 +23,7 @@ import java.util.List;
 @Path("/GetConnections")
 
 public class GetConnections extends HttpServlet {
+    /*
     private ServletContext servletContext;
     private final Logger logger = LogManager.getLogger(this.getClass());
     GenericDao<Connection> dao = new GenericDao<>(Connection.class);
@@ -31,7 +32,8 @@ public class GetConnections extends HttpServlet {
     @Produces({MediaType.APPLICATION_JSON})
     public Response getConnections() throws IOException {
 
-        List<Connection> connectionsList = ;
+        List<Connection> connectionsList = "https://my.api.mockaroo.com/Connections.json?key=9638ae60&redirect=localhost:8080/nsindieproject/home.jsp";
+        // need to somehow make a call to the
 
 //        ObjectMapper objectMapper = new ObjectMapper();
 //        objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
@@ -44,5 +46,6 @@ public class GetConnections extends HttpServlet {
 
         return Response.status(200).entity(connectionsList).build();
     }
+    */
 }
 

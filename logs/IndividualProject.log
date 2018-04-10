@@ -14,3 +14,12 @@
 [DEBUG] 2018-04-06 14:09:13.560 [http-nio-8080-exec-5] AllConnections - USERdao.getAll what is this?: User{id=1, firstName='joan', lastName='smith', email='jsmith@gmail.com', password='password'}
 [INFO ] 2018-04-06 14:09:18.481 [http-nio-8080-exec-6] AllUsers - In the doGet of allUsers
 [INFO ] 2018-04-06 14:33:12.443 [http-nio-8080-exec-3] RandomConnection - In the doGet of randomConnection
+[INFO ] 2018-04-09 18:56:05.627 [http-nio-8080-exec-2] RandomConnection - In the doGet of randomConnection
+[INFO ] 2018-04-09 18:59:25.216 [http-nio-8080-exec-4] RandomConnection - In the doGet of randomConnection
+[INFO ] 2018-04-09 19:08:22.626 [http-nio-8080-exec-2] RandomConnection - In the doGet of randomConnection
+[INFO ] 2018-04-09 19:58:51.137 [http-nio-8080-exec-6] RandomConnection - In the doGet of randomConnection
+[INFO ] 2018-04-09 20:00:27.886 [http-nio-8080-exec-3] RandomConnection - In the doGet of randomConnection
+[INFO ] 2018-04-09 20:04:36.464 [http-nio-8080-exec-9] RandomConnection - In the doGet of randomConnection
+[INFO ] 2018-04-09 20:09:42.466 [http-nio-8080-exec-9] RandomConnection - In the doGet of randomConnection
+[INFO ] 2018-04-09 20:12:44.170 [http-nio-8080-exec-10] RandomConnection - In the doGet of randomConnection
+[INFO ] 2018-04-09 20:12:46.718 [http-nio-8080-exec-9] RandomConnection - In the doGet of randomConnection
