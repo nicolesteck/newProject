@@ -23,3 +23,6 @@
 [INFO ] 2018-04-09 20:09:42.466 [http-nio-8080-exec-9] RandomConnection - In the doGet of randomConnection
 [INFO ] 2018-04-09 20:12:44.170 [http-nio-8080-exec-10] RandomConnection - In the doGet of randomConnection
 [INFO ] 2018-04-09 20:12:46.718 [http-nio-8080-exec-9] RandomConnection - In the doGet of randomConnection
+[INFO ] 2018-04-09 20:43:12.662 [http-nio-8080-exec-6] RandomConnection - In the doGet of randomConnection
+[INFO ] 2018-04-09 20:43:19.537 [http-nio-8080-exec-4] RandomConnection - In the doGet of randomConnection
+[INFO ] 2018-04-09 20:43:25.396 [http-nio-8080-exec-2] RandomConnection - In the doGet of randomConnection
