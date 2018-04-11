@@ -51,7 +51,7 @@ public class ConnectionDaoTest {
         GenericDao<User> userDao = new GenericDao<>(User.class);
 
         User user = userDao.getById(1);
-        Connection newCon = new Connection("Dogs","Likes dogs", user, "3241234");
+        Connection newCon = new Connection("Dogs","Likes dogs", user, "3241234", "John", "Trebek", "WPS");
         int id = genericDao.insert(newCon);
         assertNotEquals(0,id);
         Connection insertedCon = (Connection)genericDao.getById(id);

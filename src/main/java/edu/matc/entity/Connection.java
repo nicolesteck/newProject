@@ -21,7 +21,14 @@ public class Connection {
     @Column(name="notes")
     private String notes;
 
+    @Column(name="first_name")
+    private String firstName;
 
+    @Column(name="last_name")
+    private String lastName;
+
+    @Column(name="company")
+    private String company;
 
     @ManyToOne
     private User user;
@@ -33,12 +40,15 @@ public class Connection {
     public Connection() {
     }
 
-    public Connection(String interests, String notes, User user, String linkedInId) {
+    public Connection(String interests, String notes, User user, String linkedInId, String firstName, String lastName, String company) {
 
         this.interests = interests;
         this.notes = notes;
         this.user = user;
         this.linkedInId = linkedInId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.company = company;
     }
 
     public int getId() {
@@ -63,6 +73,38 @@ public class Connection {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getLinkedInId() {
+        return linkedInId;
+    }
+
+    public void setLinkedInId(String linkedInId) {
+        this.linkedInId = linkedInId;
     }
 
     @Override
