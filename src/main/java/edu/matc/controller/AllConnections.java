@@ -42,7 +42,11 @@ public class AllConnections extends HttpServlet {
         logger.debug("USERdao.getAll what is this?: " + userDao.getAll().get(0));
         RequestDispatcher dispatcher = req.getRequestDispatcher("/allConnections.jsp");
         logger.debug(resp);
-       // dispatcher.forward(req, resp);
+        logger.debug("RESPONSE HEADER NAMES: "  + resp.getHeaderNames());
+       // logger.debug("RESPONSE HEADERS: " + resp.getHeader());
+        logger.debug("RESPONSE STATUS: " + resp.getStatus());
+        logger.debug("REQUEST QUERY STRING: " + req.getQueryString());
+        dispatcher.forward(req, resp);
 
         logger.info("In the doGet of allConnections");
     }

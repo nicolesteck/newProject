@@ -45,7 +45,7 @@ public class CallApi extends HttpServlet {
         ReadInConnections read = new ReadInConnections(id);
         Set<String> connectionsList = read.readIn();
     servletContext.setAttribute("connections", connectionsList);
-    logger.info(" CONNECTIONS LIST:  [ FROM WITHIN CALLAPI ] " + connectionsList);
+   // logger.info(" CONNECTIONS LIST:  [ FROM WITHIN CALLAPI ] " + connectionsList);
 
     RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
     dispatcher.forward(req, resp);

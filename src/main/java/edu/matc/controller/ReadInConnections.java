@@ -58,15 +58,17 @@ public class ReadInConnections {
                 connectionsList.add(line);
                 Connection connection;
                 if (i>0) {
-                  //  logger.info(line);
+                    logger.info(line);
                  //   mapper.readValue("{" + line + "}", Connection.class);
                     connection = new Connection(user, firstName, lastName, company, linkedInId);
-                    logger.info("---------");
-                    logger.info("user: " + user.getEmail());
-                    logger.info("first name: " + firstName);
-                    logger.info("last name: " + lastName);
-                    logger.info("company: " + company);
-                    logger.info("linkedInId" + linkedInId);
+//                    logger.info("---------");
+//                    logger.info("user: " + user.getEmail());
+//                    logger.info("first name: " + firstName);
+//                    logger.info("last name: " + lastName);
+//                    logger.info("company: " + company);
+//                    logger.info("linkedInId" + linkedInId);
+                    GenericDao<Connection> localDao = new GenericDao<>(Connection.class);
+                    localDao.insert(connection);
                 }
                 i++;
 
