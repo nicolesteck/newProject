@@ -51,7 +51,7 @@ public class Connection {
         this.company = company;
     }
 
-    public Connection(User user, String linkedInId, String firstName, String lastName, String company) {
+    public Connection(User user, String firstName, String lastName, String company, String linkedInId) {
 
         this.user = user;
         this.linkedInId = linkedInId;
@@ -60,13 +60,13 @@ public class Connection {
         this.company = company;
     }
 
-    public Connection(String firstName, String lastName, String company, String linkedInId) {
-
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.company = company;
-        this.linkedInId = linkedInId;
-    }
+//    public Connection(String firstName, String lastName, String company, String linkedInId) {
+//
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.company = company;
+//        this.linkedInId = linkedInId;
+//    }
 
 
     public int getId() {

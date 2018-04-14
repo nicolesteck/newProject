@@ -41,7 +41,9 @@ public class AllConnections extends HttpServlet {
         req.setAttribute("connections", dao.getAll());
         logger.debug("USERdao.getAll what is this?: " + userDao.getAll().get(0));
         RequestDispatcher dispatcher = req.getRequestDispatcher("/allConnections.jsp");
-        dispatcher.forward(req, resp);
+        logger.debug(resp);
+       // dispatcher.forward(req, resp);
+
         logger.info("In the doGet of allConnections");
     }
 

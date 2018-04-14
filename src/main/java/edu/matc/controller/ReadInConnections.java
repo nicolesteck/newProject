@@ -3,8 +3,11 @@ package edu.matc.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.matc.entity.Connection;
 import edu.matc.entity.User;
+import edu.matc.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import javax.servlet.ServletContext;
 import java.util.Properties;
 
 import java.io.BufferedReader;
@@ -18,7 +21,7 @@ import java.util.*;
 
 public class ReadInConnections {
     private final Logger logger = LogManager.getLogger(this.getClass());
-
+    User user;
     public static void main(String args) {
         //hi
     }
@@ -40,7 +43,7 @@ public class ReadInConnections {
             String line = null;
            // ObjectMapper mapper;
             int i = 0;
-            getUserId();
+
 
             // read each line and write to System.out
             while ((line = br.readLine()) != null) {
@@ -49,14 +52,17 @@ public class ReadInConnections {
                 String lastName = parts[1]; // 034556
                 String company = parts[2];
                 String linkedInId = parts[3];
+               // int userId = (int)servletContext.getAttribute("userId");
+
             //    mapper = new ObjectMapper();
                 connectionsList.add(line);
                 Connection connection;
                 if (i>0) {
                   //  logger.info(line);
                  //   mapper.readValue("{" + line + "}", Connection.class);
-                    connection = new Connection(firstName, lastName, company, linkedInId);
+                    connection = new Connection(user, firstName, lastName, company, linkedInId);
                     logger.info("---------");
+                    logger.info("user: " + user.getEmail());
                     logger.info("first name: " + firstName);
                     logger.info("last name: " + lastName);
                     logger.info("company: " + company);
@@ -70,11 +76,15 @@ public class ReadInConnections {
             return connectionsList;
         }
 
-        public void getUserId() {
-        Properties properties = new Properties();
-        User user;
-        String userName = properties.getProperty(user.name);
-        int userId =
+        public User findUser(int id) {
+            GenericDao<User> localDao = new GenericDao<>(User.class);
+            user = localDao.getById(id);
+        return user;
         }
+
+        public ReadInConnections(int id) {
+            user = findUser(id);
+        }
+
 
     }
