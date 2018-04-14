@@ -50,8 +50,8 @@ public class ReadInConnections {
                 String[] parts = line.split(",");
                 String firstName = parts[0]; // 004
                 String lastName = parts[1]; // 034556
-                String company = parts[2];
-                String linkedInId = parts[3];
+                String company = parts[3];
+                String linkedInId = parts[2];
                // int userId = (int)servletContext.getAttribute("userId");
 
             //    mapper = new ObjectMapper();

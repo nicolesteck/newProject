@@ -39,19 +39,21 @@
                                 <h3>Connections</h3>
                             </header>
                             <table>
-                                <tr>
-                                    <th>
 
-                                        <td>First</td>
-                                        <td>Last</td>
-                                    <!--
-                                       <td>Connections</td>
-                                      <td>Summary</td>
-                                   -->
-                                        <td>Interests</td>
-                                        <td>Notes</td>
-                                    </th>
-                                </tr>
+                                    <tr>
+
+                                        <th>First</td>
+                                        <th>Last</td>
+                                        <!--
+                                           <th>Connections</td>
+                                          <th>Summary</td>
+                                       -->
+                                        <th>Company</td>
+                                        <th>Interests</td>
+                                        <th>Notes</td>
+                                        <th>Update</td>
+                                    </tr>
+
                                 <c:forEach var="curr" items="${connections}">
                                     <tr>
 
@@ -62,6 +64,9 @@
                                           <td>${curr.company}</td>
                                         <td>${curr.interests}</td>
                                         <td>${curr.notes}</td>
+
+                                        <td><a href="updateInterests?linkedInId=${curr.linkedInId}">Update Interests for ${curr.linkedInId}</a><br /><a href="updateNotes?linkedInId=${curr.linkedInId}">Update Notes</a></td>
+
                                     </tr>
 
                                 </c:forEach>
