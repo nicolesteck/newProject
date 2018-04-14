@@ -36,7 +36,7 @@
                     <section>
                         <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
                         <header>
-                            <h3>Update Interests</h3>
+                            <h3>Update Connection</h3>
                         </header>
                         <c:forEach var="curr" items="${connection}">
                         <FORM ACTION="completeUpdate?linkedInId=${curr.linkedInId}" METHOD="POST">
@@ -44,7 +44,7 @@
                                 <TR><TD>First Name: <INPUT TYPE="TEXT" NAME="firstName" VALUE="${curr.firstName}"></TD></TR>
                                 <TR><TD>Last Name: <INPUT TYPE="TEXT" NAME="lastName" VALUE="${curr.lastName}"></TD></TR>
                                 <TR><TD>Company: <INPUT TYPE="TEXT" NAME="company" VALUE="${curr.company}"></TD></TR>
-                                <TR><TD>Interests: <INPUT TYPE="TEXT" NAME="interests" VALUE="${curr.company}"></TD></TR>
+                                <TR><TD>Interests: <INPUT TYPE="TEXT" NAME="interests" VALUE="${curr.interests}"></TD></TR>
                                 <TR><TD>Notes: <INPUT TYPE="TEXT" NAME="notes" VALUE="${curr.notes}"></TD></TR>
                                 <TR><TH><INPUT TYPE="SUBMIT" VALUE="Update"></TH></TR>
                             </TABLE>

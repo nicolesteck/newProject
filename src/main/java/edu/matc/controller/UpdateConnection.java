@@ -16,7 +16,7 @@ import java.io.IOException;
 
 
 @WebServlet(
-        urlPatterns = {"/updateInterests"}
+        urlPatterns = {"/updateConnection"}
 )
 
 /**
@@ -25,7 +25,7 @@ import java.io.IOException;
  */
 
 
-public class UpdateInterests extends HttpServlet {
+public class UpdateConnection extends HttpServlet {
 
 
 
@@ -50,7 +50,7 @@ public class UpdateInterests extends HttpServlet {
 
         req.setAttribute("connection", dao.getByPropertyEqual("linkedInId", linkedInId));
         RequestDispatcher dispatcher = req.getRequestDispatcher("/updateInterests.jsp");
-        logger.info("In the doGet of UpdateInterests");
+        logger.info("In the doGet of UpdateConnection");
         dispatcher.forward(req, resp);
 
 

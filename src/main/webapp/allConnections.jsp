@@ -16,9 +16,9 @@
         <section class="wrapper style4 container">
 
             <div class="row 150%">
-                <div class="4u 12u(narrower)">
+                <!--<div class="4u 12u(narrower)">
 
-                    <!-- Sidebar -->
+                    <!-- Sidebar
                     <div class="sidebar">
                         <section>
                             <header>
@@ -28,12 +28,12 @@
                         </section>
                     </div>
 
-                </div>
-                <div class="8u 12u(narrower) important(narrower)">
+                </div>-->
+                <!--<div class="8u 12u(narrower) important(narrower)">
 
-                    <!-- Content -->
+                    <!-- Content
                     <div class="content">
-                        <section>
+                        <section> -->
                             <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
                             <header>
                                 <h3>Connections</h3>
@@ -65,18 +65,19 @@
                                         <td>${curr.interests}</td>
                                         <td>${curr.notes}</td>
 
-                                        <td><a href="updateInterests?linkedInId=${curr.linkedInId}">Update Interests for ${curr.linkedInId}</a><br /><a href="updateNotes?linkedInId=${curr.linkedInId}">Update Notes</a></td>
-
+                                        <td><a href="updateConnection?linkedInId=${curr.linkedInId}">Update ${curr.firstName}'s Info</a></td>
+                                        <td><a href="removeConnection?linkedInId=${curr.linkedInId}">Remove ${curr.firstName} ${curr.lastName} from Annotator</a></td>
                                     </tr>
 
                                 </c:forEach>
 
 
                             </table>
+                      <!--
                         </section>
                     </div>
 
-                </div>
+                </div> -->
             </div>
         </section>
 
