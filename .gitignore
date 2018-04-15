@@ -56,3 +56,4 @@ fabric.properties
 src/main/resources/clientKey.properties
 *.log
 *.log
+*.log
