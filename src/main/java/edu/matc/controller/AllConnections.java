@@ -7,12 +7,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * The type All connections.
@@ -28,18 +30,29 @@ import java.io.IOException;
 
 
 public class AllConnections extends HttpServlet {
-
+//private ServletContext servletContext;
 
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+      //  servletContext = getServletContext();
+        String userVal = req.getRemoteUser();
+        GenericDao<User> localDao = new GenericDao<>(User.class);
+        int userId = localDao.getByPropertyLike("email", userVal).get(0).getId();
 
+
+        //int userId = (int)servletContext.getAttribute("userId");
+        String userIdString = String.valueOf(userId);
         GenericDao<Connection> dao = new GenericDao<>(Connection.class);
         GenericDao<User> userDao = new GenericDao<>(User.class);
-        req.setAttribute("connections", dao.getAll());
-        logger.debug("USERdao.getAll what is this?: " + userDao.getAll().get(0));
+        //req.setAttribute("connections", dao.getAll());
+        req.setAttribute("connections", dao.getByPropertyEqualUserId(userId));
+        User user = localDao.getById(userId);
+         List<Connection> connections = dao.getByPropertyEqualUserId(userId);
+        logger.debug("IN ALL CONNECTIONS: user id is " + userIdString);
+        logger.debug("ConnectionDao.getByPropertyEqualUserId what is this?: " + dao.getByPropertyEqualUserId(userId));
         RequestDispatcher dispatcher = req.getRequestDispatcher("/allConnections.jsp");
         logger.debug(resp);
         logger.debug("RESPONSE HEADER NAMES: "  + resp.getHeaderNames());

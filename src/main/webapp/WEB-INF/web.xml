@@ -13,7 +13,7 @@
         </form-login-config>
     </login-config>
 
-    <!--Protect the user search page. -->
+    <!--Protect the home page. -->
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>home</web-resource-name>
@@ -22,6 +22,18 @@
         <auth-constraint>
             <role-name>admin</role-name>
             <role-name>user</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+
+    <!--Protect the user administration page. -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>allUsers</web-resource-name>
+            <url-pattern>/allUsers</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
         </auth-constraint>
     </security-constraint>
 

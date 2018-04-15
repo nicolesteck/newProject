@@ -72,4 +72,23 @@ public class ConnectionDaoTest {
         assertEquals(thisConnection, thatConnection);
     }
 
+    /**
+     * Gets by property equal.
+     */
+    @Test
+    void getByPropertyEqual() {
+        List<Connection> connections = (List<Connection>)genericDao.getByPropertyEqual("firstName", "Renee");
+        assertNotNull(connections);
+        assertEquals(1, connections.size());
+    }
+
+    /**
+     * Gets by property like.
+     */
+    @Test
+    void getByPropertyLike() {
+        List<Connection> connections = (List<Connection>)genericDao.getByPropertyLike("firstName", "a");
+        assertEquals(3, connections.size());
+    }
+
 }

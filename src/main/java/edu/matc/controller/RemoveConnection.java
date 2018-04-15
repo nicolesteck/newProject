@@ -34,7 +34,6 @@ public class RemoveConnection extends HttpServlet {
         Connection connection;
 
         String linkedInId = (String)req.getParameter("linkedInId");
-
         connection = dao.getByPropertyEqual("linkedInId", linkedInId).get(0);
         String firstName = connection.getFirstName();
         String lastName = connection.getLastName();

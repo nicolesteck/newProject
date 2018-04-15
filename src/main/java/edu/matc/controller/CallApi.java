@@ -32,8 +32,7 @@ public class CallApi extends HttpServlet {
         logger.info("~~~~~~~~~~~~~~~~~~~~~USERVAL: ~~~~~~~~~~~~~~~~~~~~~~~~~" + userVal + "~~(IN DOGET)~~~");
 
        // identifyUser(req);
-        /* the below code was in another method but that broke it */
-       // String userVal = req.getRemoteUser();
+
         logger.info("~~~~~~~~~~~~~~~~~~~~~USERVAL: ~~~~~~~~~~~~~~~~~~~~~~~~~" + userVal + "~~(IN ID USER)[jk]~~~");
         GenericDao<User> localDao = new GenericDao<>(User.class);
         int id = localDao.getByPropertyLike("email", userVal).get(0).getId();

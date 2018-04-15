@@ -87,6 +87,19 @@ public class GenericDao<T> {
 
     }
 
+    public List<T> getByPropertyEqualUserId(int id){
+        Session session = getSession();
+
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        logger.debug(query.getParameters());
+        query.select(root).where(builder.equal(root.get("user"), id));
+
+        List<T> list = session.createQuery(query).getResultList();
+        return list;
+    }
+
     /**
      * update entity
      *
