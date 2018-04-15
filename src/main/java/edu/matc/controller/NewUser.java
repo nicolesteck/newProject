@@ -1,6 +1,7 @@
 package edu.matc.controller;
 
 //import edu.matc.entity.Role;
+import edu.matc.entity.Role;
 import edu.matc.entity.User;
 import edu.matc.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
@@ -37,14 +38,15 @@ public class NewUser extends HttpServlet {
         user.setFirstName(req.getParameter("firstName"));
         user.setLastName(req.getParameter("lastName"));
         user.setPassword(req.getParameter("password"));
-//        Role role = new Role();
-//        role.setUser(user);
-//        role.setRoleName("user");
-//        user.addRole(role);
+        Role role = new Role();
+        role.setUser(user);
+        role.setRoleName("user");
+        role.setEmail(req.getParameter("email"));
+        user.addRole(role);
         GenericDao<User> dao = new GenericDao<>(User.class);
         logger.info("(NEWUSER) USER INFO: " + user);
         dao.insert(user);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/newUser.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
         dispatcher.forward(req, resp);
     }
 

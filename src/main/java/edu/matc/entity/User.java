@@ -1,6 +1,8 @@
 package edu.matc.entity;
 
 
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.HashSet;
@@ -32,7 +34,11 @@ public class User {
     @OneToMany(mappedBy="user", cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
     private Set<Connection> connections = new HashSet<>();
 
-    // role
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @Getter
+    @Setter
+    private Set<Role> roles = new HashSet<Role>();
+
 
 
     public User(String firstName, String lastName, String email, String password) {
@@ -86,6 +92,15 @@ public class User {
         this.password = password;
     }
 
+    public void addRole(Role role) {
+        roles.add(role);
+        role.setUser(this);
+    }
+
+    public void removeRole(Role role) {
+        roles.remove(role);
+        role.setUser(null);
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
