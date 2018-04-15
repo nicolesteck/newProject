@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.21, for macos10.13 (x86_64)
 --
--- Host: 127.0.0.1    Database: 
+-- Host: 127.0.0.1    Database:
 -- ------------------------------------------------------
 -- Server version	5.7.21
 
