@@ -46,7 +46,7 @@ public class NewUser extends HttpServlet {
         GenericDao<User> dao = new GenericDao<>(User.class);
         logger.info("(NEWUSER) USER INFO: " + user);
         dao.insert(user);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/newUserIndex.jsp");
         dispatcher.forward(req, resp);
     }
 

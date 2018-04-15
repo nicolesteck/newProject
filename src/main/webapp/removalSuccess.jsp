@@ -19,10 +19,10 @@
                 <li><a href="allConnections" class="button">View All Connections</a></li>
 
                 <ul>
-                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                        <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                        <li><a href="no-sidebar.html">No Sidebar</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="archive/left-sidebar.html">Left Sidebar</a></li>
+                        <li><a href="archive/right-sidebar.html">Right Sidebar</a></li>
+                        <li><a href="archive/no-sidebar.html">No Sidebar</a></li>
+                        <li><a href="archive/contact.html">Contact</a></li>
                         <li class="submenu">
                             <a href="#">Submenu</a>
                             <ul>

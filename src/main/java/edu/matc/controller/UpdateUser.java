@@ -1,5 +1,6 @@
 package edu.matc.controller;
 
+import edu.matc.entity.Connection;
 import edu.matc.entity.User;
 import edu.matc.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
@@ -13,11 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * The type All users.
- */
+
 @WebServlet(
-        urlPatterns = {"/allUsers"}
+        urlPatterns = {"/updateUser"}
 )
 
 /**
@@ -26,7 +25,7 @@ import java.io.IOException;
  */
 
 
-public class AllUsers extends HttpServlet {
+public class UpdateUser extends HttpServlet {
 
 
 
@@ -34,12 +33,19 @@ public class AllUsers extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+//
         GenericDao<User> dao = new GenericDao<>(User.class);
-        req.setAttribute("users", dao.getAll());
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/allUsers.jsp");
+
+        String id = (String)req.getParameter("id");
+        int intId = Integer.parseInt(id);
+        logger.debug("THE USER ID IS: " + id);
+
+        req.setAttribute("user", dao.getByPropertyEqual("id", id));
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/updateUser.jsp");
+        logger.info("In the doGet of UpdateConnection");
         dispatcher.forward(req, resp);
-        logger.info("In the doGet of allUsers");
+
+
     }
 
 }

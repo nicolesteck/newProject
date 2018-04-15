@@ -16,9 +16,9 @@
     <section class="wrapper style4 container">
 
         <div class="row 150%">
-            <!--<div class="4u 12u(narrower)">
+            <div class="4u 12u(narrower)">
 
-                <!-- Sidebar
+                <!-- Sidebar -->
                 <div class="sidebar">
                     <section>
                         <header>
@@ -28,49 +28,42 @@
                     </section>
                 </div>
 
-            </div>-->
-            <!--<div class="8u 12u(narrower) important(narrower)">
-            -->
-
-            -- Content
-            <div class="content">
-                <section> -->
-
-                    <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-                    <header>
-                        <h3>Connections</h3>
-                    </header>
-                    <table>
-
-                        <tr>
-
-                            <th>First</td>
-                            <th>Last</td>
-                            <th>Email</td>
-                        </tr>
-
-                        <c:forEach var="curr" items="${users}">
-                            <tr>
-
-                                    <%--  <td>${curr.user.firstName}</td>
-                                      <td>${curr.user.lastName}</td> --%>
-                                <td>${curr.firstName}</td>
-                                <td>${curr.lastName}</td>
-                                <td>${curr.email}</td>
-
-                                <td><a href="updateUser?id=${curr.id}">Update Info</a></td>
-                                <td><a href="removeUser?id=${curr.id}">Remove ${curr.email} </a></td>
-                            </tr>
-
-                        </c:forEach>
-
-
-                    </table>
-
-                </section>
             </div>
-            <!--
-                            </div> -->
+            <div class="8u 12u(narrower) important(narrower)">
+
+                <!-- Content -->
+                <div class="content">
+                    <section>
+                        <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+                        <header>
+                            <h3>Update Connection</h3>
+                        </header>
+                        <c:forEach var="curr" items="${user}">
+                        <FORM ACTION="completeUserUpdate?id=${curr.id}" METHOD="POST">
+                            <TABLE>
+                                <TR><TD>First Name: <INPUT TYPE="TEXT" NAME="firstName" VALUE="${curr.firstName}"></TD></TR>
+                                <TR><TD>Last Name: <INPUT TYPE="TEXT" NAME="lastName" VALUE="${curr.lastName}"></TD></TR>
+                                <TR><TD>Email: <INPUT TYPE="TEXT" NAME="email" VALUE="${curr.email}"></TD></TR>
+                              <%--
+                                <TR><TD>Role:
+                                    <INPUT TYPE="select" NAME="roleName" value="${curr.roles.get(0).roleName}">
+                                    <SELECT>
+                                        <option value="admin">Admin</option>
+                                        <option value="user">User</option>
+                                    </SELECT>
+
+                                </TD></TR>
+                                --%>
+                                <TR><TH><INPUT TYPE="SUBMIT" VALUE="Update"></TH></TR>
+                            </TABLE>
+                            </c:forEach>
+                        </FORM>
+
+
+                    </section>
+                </div>
+
+            </div>
         </div>
     </section>
 
@@ -127,23 +120,6 @@
     </section> -->
 
 </article>
-
-<!-- Footer -->
-<footer id="footer">
-
-    <!--  <ul class="icons">
-          <li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
-          <li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
-          <li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
-          <li><a href="#" class="icon circle fa-github"><span class="label">Github</span></a></li>
-          <li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribbble</span></a></li>
-      </ul>
-
-      <ul class="copyright">
-          <li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-      </ul>
--->
-</footer>
 
 </div>
 
