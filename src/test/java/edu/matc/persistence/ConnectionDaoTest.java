@@ -41,7 +41,7 @@ public class ConnectionDaoTest {
     @Test
     void getAllConnectionsSuccess() {
         List<Connection> connections = (List<Connection>)genericDao.getAll();
-        assertEquals(4, connections.size());
+        assertEquals(6, connections.size());
     }
     /**
      * Insert success.
@@ -65,10 +65,10 @@ public class ConnectionDaoTest {
     @Test // Genericized
     void saveOrUpdate() {
         String newInterests = "Watching movies";
-        Connection thisConnection = (Connection)genericDao.getById(3);
+        Connection thisConnection = (Connection)genericDao.getById(1507);
         thisConnection.setInterests(newInterests);
         genericDao.saveOrUpdate(thisConnection);
-        Connection thatConnection = (Connection)genericDao.getById(3);
+        Connection thatConnection = (Connection)genericDao.getById(1507);
         assertEquals(thisConnection, thatConnection);
     }
 
@@ -77,7 +77,7 @@ public class ConnectionDaoTest {
      */
     @Test
     void getByPropertyEqual() {
-        List<Connection> connections = (List<Connection>)genericDao.getByPropertyEqual("firstName", "Renee");
+        List<Connection> connections = (List<Connection>)genericDao.getByPropertyEqual("firstName", "Blair");
         assertNotNull(connections);
         assertEquals(1, connections.size());
     }
@@ -87,7 +87,7 @@ public class ConnectionDaoTest {
      */
     @Test
     void getByPropertyLike() {
-        List<Connection> connections = (List<Connection>)genericDao.getByPropertyLike("firstName", "a");
+        List<Connection> connections = (List<Connection>)genericDao.getByPropertyLike("firstName", "d");
         assertEquals(3, connections.size());
     }
 

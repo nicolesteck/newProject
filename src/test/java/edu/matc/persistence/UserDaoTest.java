@@ -1,5 +1,6 @@
 package edu.matc.persistence;
 
+import edu.matc.entity.Role;
 import edu.matc.entity.User;
 import edu.matc.test.util.Database;
 import org.apache.logging.log4j.LogManager;
@@ -21,7 +22,8 @@ class UserDaoTest {
     /**
      * The Generic dao.
      */
-    GenericDao genericDao;
+    GenericDao<User> genericDao;
+    GenericDao<Role> roleDao;
 
     /**
      * Sets up.
@@ -29,7 +31,8 @@ class UserDaoTest {
     @BeforeEach
     void setUp() {
         logger.info("BeforeEach");
-        genericDao = new GenericDao(User.class);
+        genericDao = new GenericDao<>(User.class);
+        roleDao = new GenericDao<>(Role.class);
         Database database = Database.getInstance();
         database.runSQL("generatetest.sql");
 
@@ -41,39 +44,41 @@ class UserDaoTest {
     @Test
     void getAllUsersSuccess() {
         List<User> users = (List<User>)genericDao.getAll();
-        assertEquals(3, users.size());
+        assertEquals(8, users.size());
     }
-//
-//    /**
-//     * Gets by id success.
-//     */
-//    @Test
-//    void getByIdSuccess() {
-//        User retrievedUser = (User)genericDao.getById(3);
-//        assertNotNull(retrievedUser);
-//        assertEquals("Curry", retrievedUser.getLastName());
-//    }
-//
-//    /**
-//     * Save or update.
-//     */
-//    @Test
-//    void saveOrUpdate() {
-//        String newName = "Wolfenstein";
-//        User thisUser = (User)genericDao.getById(3);
-//        thisUser.setLastName(newName);
-//        genericDao.saveOrUpdate(thisUser);
-//        User thatUser = (User)genericDao.getById(3);
-//        assertEquals(thisUser, thatUser);
-//    }
-//
+
+    /**
+     * Gets by id success.
+     */
+    @Test
+    void getByIdSuccess() {
+        User retrievedUser = (User)genericDao.getById(14);
+        assertNotNull(retrievedUser);
+        assertEquals("woolf", retrievedUser.getFirstName());
+    }
+
+    /**
+     * Save or update.
+     */
+    @Test
+    void saveOrUpdate() {
+        String newName = "Wolfenstein";
+        User thisUser = (User)genericDao.getById(14);
+        thisUser.setLastName(newName);
+        genericDao.saveOrUpdate(thisUser);
+        User thatUser = (User)genericDao.getById(14);
+        assertEquals(thisUser, thatUser);
+    }
+
     /**
      * Insert success.
      */
     @Test
     void insertSuccess() {
-        User newUser = new User("Joe", "Trebek","jtrebek@gmail","supersecure");
+        User newUser = new User("Joseph", "McMadden","mcmadden@gmail.com","supersecure");
+        Role newRole = new Role(newUser, "admin", "mcmadden@gmail.com");
         int id = genericDao.insert(newUser);
+        int roleId = roleDao.insert(newRole);
         assertNotEquals(0,id);
         User insertedUser = (User)genericDao.getById(id);
         assertEquals(newUser, insertedUser);
@@ -105,8 +110,8 @@ class UserDaoTest {
      */
     @Test
     void deleteSuccess() {
-        genericDao.delete(genericDao.getById(3));
-        assertNull(genericDao.getById(3));
+        genericDao.delete(genericDao.getById(14));
+        assertNull(genericDao.getById(14));
     }
 
 
@@ -115,9 +120,9 @@ class UserDaoTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<User> users = (List<User>) genericDao.getByPropertyEqual("lastName", "Rasmussen");
+        List<User> users = (List<User>) genericDao.getByPropertyEqual("lastName", "smith");
         assertEquals(1, users.size());
-        assertEquals(3, users.get(0).getId());
+        assertEquals(1, users.get(0).getId());
     }
 
     /**
@@ -125,8 +130,8 @@ class UserDaoTest {
      */
     @Test
     void getByPropertyLike() {
-        List<User> users = (List<User>) genericDao.getByPropertyLike("firstName", "ja");
-        assertEquals(2, users.size());
+        List<User> users = (List<User>) genericDao.getByPropertyLike("firstName", "o");
+        assertEquals(6, users.size());
     }
 
 
