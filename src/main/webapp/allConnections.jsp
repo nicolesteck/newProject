@@ -32,9 +32,9 @@
                 <!--<div class="8u 12u(narrower) important(narrower)">
                 -->
 
-                    -- Content
+
                     <div class="content">
-                        <section> -->
+                        <section>
 
                             <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
                             <header>

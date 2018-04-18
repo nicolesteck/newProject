@@ -27,11 +27,10 @@ public class ConnectionDaoTest {
      */
     @BeforeEach
     void setUp() {
-        logger.info("BeforeEach");
+       // logger.info("BeforeEach");
         genericDao = new GenericDao<>(Connection.class);
         Database database = Database.getInstance();
-        logger.info("hi");
-        database.runSQL("generatetest.sql");
+        database.runSQL("cleandb.sql");
 
     }
 
@@ -41,7 +40,7 @@ public class ConnectionDaoTest {
     @Test
     void getAllConnectionsSuccess() {
         List<Connection> connections = (List<Connection>)genericDao.getAll();
-        assertEquals(6, connections.size());
+        assertEquals(3, connections.size());
     }
     /**
      * Insert success.
@@ -65,10 +64,10 @@ public class ConnectionDaoTest {
     @Test // Genericized
     void saveOrUpdate() {
         String newInterests = "Watching movies";
-        Connection thisConnection = (Connection)genericDao.getById(1507);
+        Connection thisConnection = (Connection)genericDao.getById(3);
         thisConnection.setInterests(newInterests);
         genericDao.saveOrUpdate(thisConnection);
-        Connection thatConnection = (Connection)genericDao.getById(1507);
+        Connection thatConnection = (Connection)genericDao.getById(3);
         assertEquals(thisConnection, thatConnection);
     }
 
@@ -77,7 +76,7 @@ public class ConnectionDaoTest {
      */
     @Test
     void getByPropertyEqual() {
-        List<Connection> connections = (List<Connection>)genericDao.getByPropertyEqual("firstName", "Blair");
+        List<Connection> connections = (List<Connection>)genericDao.getByPropertyEqual("firstName", "Joe");
         assertNotNull(connections);
         assertEquals(1, connections.size());
     }
@@ -87,8 +86,8 @@ public class ConnectionDaoTest {
      */
     @Test
     void getByPropertyLike() {
-        List<Connection> connections = (List<Connection>)genericDao.getByPropertyLike("firstName", "d");
-        assertEquals(3, connections.size());
+        List<Connection> connections = (List<Connection>)genericDao.getByPropertyLike("firstName", "j");
+        assertEquals(2, connections.size());
     }
 
 }
