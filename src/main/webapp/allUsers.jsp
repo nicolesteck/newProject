@@ -7,9 +7,12 @@
 <!-- Main -->
 <article id="main">
 
+    <header id="header" >
+        <%@include file="nav.jsp"%>
+        <br />
+    </header>
     <header class="special container">
         <span class="icon fa-laptop"></span>
-        <%@include file="nav.jsp"%>
         <h2>View All <strong>Users</strong></h2>
     </header>
 
@@ -48,6 +51,7 @@
                             <th>First</td>
                             <th>Last</td>
                             <th>Email</td>
+                            <th>Update</th>
                         </tr>
 
                         <c:forEach var="curr" items="${users}">
@@ -59,8 +63,8 @@
                                 <td>${curr.lastName}</td>
                                 <td>${curr.email}</td>
 
-                                <td><a href="updateUser?id=${curr.id}">Update Info</a></td>
-                                <td><a href="removeUser?id=${curr.id}">Remove ${curr.email} </a></td>
+                                <td><a href="updateUser?id=${curr.id}">Update Info</a>
+                                <br /><a href="removeUser?id=${curr.id}">Remove ${curr.email} </a></td>
                             </tr>
 
                         </c:forEach>

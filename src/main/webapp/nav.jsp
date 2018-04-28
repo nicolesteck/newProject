@@ -13,23 +13,31 @@
 <nav id="nav">
     <ul>
         <li class="current"><a href="index.jsp">Welcome</a></li>
-
+        <c:choose>
+            <c:when test="${empty pageContext.request.remoteUser}">
+                <li>
+                    <a href="login" class="nav-link">Log In</a>
+                </li>
+            </c:when>
+            <c:otherwise>
                 <li class="nav-item">
                     <a href="allConnections" class="nav-link">Connections</a>
                 </li>
                 <li class="nav-item">
                     <a href="callApi" class="nav-link">Import Connections</a>
                 </li>
-                <%--<li class="nav-item">--%>
-                    <%--<a href="updateConnections" class="nav-link">Update Connections</a>--%>
-                <%--</li>--%>
-                <li class="nav-item">
-                    <a href="allUsers" class="nav-link">Users (Admin)</a>
-                </li>
-
-                <li class="nav-item">
+                <c:if test="${role == 'admin'}">
+                    <li class="nav-item">
+                        <a href="allUsers" class="nav-link">Users</a>
+                    </li>
+                </c:if>
+                <li>
                     <a href="logout" class="nav-link">Log Out</a>
                 </li>
+            </c:otherwise>
+        </c:choose>
+
+
 
 
       <!--  <li class="submenu">

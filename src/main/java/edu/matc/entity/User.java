@@ -34,7 +34,7 @@ public class User {
     @OneToMany(mappedBy="user", cascade=CascadeType.REMOVE, fetch=FetchType.EAGER)
     private Set<Connection> connections = new HashSet<>();
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @Getter
     @Setter
     private Set<Role> roles = new HashSet<>();
@@ -101,6 +101,8 @@ public class User {
         roles.remove(role);
         role.setUser(null);
     }
+
+    public Set<Role> getRoles() { return roles; }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

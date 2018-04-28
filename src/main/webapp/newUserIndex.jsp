@@ -32,7 +32,7 @@
                 </p>
             <section class="wrapper style2 container special-alt">
                 <ul class="buttons">
-                    <li><a href="home.jsp" class="button special">Log In</a></li>
+                    <li><a href="login" class="button special">Log In</a></li>
 
                 </ul>
             </section>

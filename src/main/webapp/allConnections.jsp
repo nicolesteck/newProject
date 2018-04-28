@@ -8,9 +8,12 @@
     <!-- Main -->
     <article id="main">
 
+        <header id="header" >
+            <%@include file="nav.jsp"%>
+            <br />
+        </header>
         <header class="special container">
             <span class="icon fa-laptop"></span>
-            <%@include file="nav.jsp"%>
             <h2>View All <strong>Connections</strong></h2>
         </header>
 
@@ -69,8 +72,8 @@
                                         <td>${curr.interests}</td>
                                         <td>${curr.notes}</td>
 
-                                        <td><a href="updateConnection?linkedInId=${curr.linkedInId}">Update Info</a></td>
-                                        <td><a href="removeConnection?linkedInId=${curr.linkedInId}">Remove ${curr.firstName} </a></td>
+                                        <td><a href="updateConnection?linkedInId=${curr.linkedInId}">Update Info</a>
+                                        <br /><a href="removeConnection?linkedInId=${curr.linkedInId}">Remove ${curr.firstName} </a></td>
                                     </tr>
 
                                 </c:forEach>

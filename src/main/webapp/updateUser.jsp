@@ -9,6 +9,7 @@
 
     <header class="special container">
         <span class="icon fa-laptop"></span>
+        <%@include file="nav.jsp"%>
         <h2>View All <strong>Users</strong></h2>
     </header>
 
@@ -43,7 +44,7 @@
                             <TABLE>
                                 <TR><TD>First Name: <INPUT TYPE="TEXT" NAME="firstName" VALUE="${curr.firstName}"></TD></TR>
                                 <TR><TD>Last Name: <INPUT TYPE="TEXT" NAME="lastName" VALUE="${curr.lastName}"></TD></TR>
-                                <TR><TD>Email: <INPUT TYPE="TEXT" NAME="email" VALUE="${curr.email}"></TD></TR>
+                                <TR><TD>Email Address: <INPUT TYPE="TEXT" NAME="email" VALUE="${curr.email}"></TD></TR>
                               <%--
                                 <TR><TD>Role:
                                     <INPUT TYPE="select" NAME="roleName" value="${curr.roles.get(0).roleName}">
