@@ -3,7 +3,7 @@
 
 <html><body>
 
-
+<%@include file="nav.jsp"%>
 <!-- Main -->
 <article id="main">
 

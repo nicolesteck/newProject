@@ -1,4 +1,5 @@
 <%@ page import="java.util.Properties" %>
+<%@include file="head.jsp"%>
 <%--
   Created by IntelliJ IDEA.
   User: nicolesteck
@@ -12,6 +13,7 @@
     <title>Create A New Account</title>
 </head>
 <body>
+
 <FORM ACTION="newUser" METHOD="POST">
     <TABLE>
         <TR><TD>First Name: <INPUT TYPE="TEXT" NAME="firstName"></TD></TR>

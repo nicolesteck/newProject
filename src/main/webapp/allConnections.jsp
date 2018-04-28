@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="head.jsp"%>
 
+
 <html><body>
 
 
@@ -9,6 +10,7 @@
 
         <header class="special container">
             <span class="icon fa-laptop"></span>
+            <%@include file="nav.jsp"%>
             <h2>View All <strong>Connections</strong></h2>
         </header>
 

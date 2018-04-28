@@ -25,7 +25,7 @@ public class Database {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
     // create an object of the class Database
-    private static Database instance = new Database();
+    private static final Database instance = new Database();
 
     private Properties properties;
 
@@ -75,7 +75,7 @@ public class Database {
      *
      * @throws Exception the exception
      */
-    public void connect() throws Exception {
+    private void connect() throws Exception {
         if (connection != null)
             return;
 
@@ -92,7 +92,7 @@ public class Database {
     /**
      * Disconnect.
      */
-    public void disconnect() {
+    private void disconnect() {
         if (connection != null) {
             try {
                 connection.close();
@@ -130,9 +130,9 @@ public class Database {
             }
 
         } catch (SQLException se) {
-            logger.error(se);
+            logger.error("SQL exception: " + se);
         } catch (Exception e) {
-            logger.error(e);
+            logger.error("Generic exception: " + e);
         } finally {
             disconnect();
         }

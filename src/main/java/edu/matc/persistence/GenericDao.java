@@ -19,7 +19,7 @@ import java.util.List;
  * @param <T> the type parameter
  */
 public class GenericDao<T> {
-    private Class<T> type;
+    private final Class<T> type;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     /**
@@ -80,7 +80,7 @@ public class GenericDao<T> {
         Session session = getSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<T> query = builder.createQuery(type);
-        Root<T> root = query.from(type);
+        query.from(type);
         List<T> list = session.createQuery(query).getResultList();
         session.close();
         return list;
@@ -96,8 +96,8 @@ public class GenericDao<T> {
         logger.debug(query.getParameters());
         query.select(root).where(builder.equal(root.get("user"), id));
 
-        List<T> list = session.createQuery(query).getResultList();
-        return list;
+     //   List<T> list = ;
+        return session.createQuery(query).getResultList();
     }
 
     /**

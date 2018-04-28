@@ -17,23 +17,21 @@ import java.util.List;
 import java.util.Set;
 
 @WebServlet(
+        name="callApi",
         urlPatterns = {"/callApi"}
 )
 public class CallApi extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
-    private ServletContext servletContext;
 
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-
+        ServletContext servletContext;
 
 
         String userVal = req.getRemoteUser();
         logger.info("~~~~~~~~~~~~~~~~~~~~~USERVAL: ~~~~~~~~~~~~~~~~~~~~~~~~~" + userVal + "~~(IN DOGET)~~~");
-
        // identifyUser(req);
-
-        logger.info("~~~~~~~~~~~~~~~~~~~~~USERVAL: ~~~~~~~~~~~~~~~~~~~~~~~~~" + userVal + "~~(IN ID USER)[jk]~~~");
+       logger.info("~~~~~~~~~~~~~~~~~~~~~USERVAL: ~~~~~~~~~~~~~~~~~~~~~~~~~" + userVal + "~~(IN ID USER)[jk]~~~");
         GenericDao<User> localDao = new GenericDao<>(User.class);
         int id = localDao.getByPropertyLike("email", userVal).get(0).getId();
         logger.info("~~~~~~~~~~~~~~~~~~~~~USER ID: ~~~~~~~~~~~~~~~~~~~~~~~~~" + id + "~~~~~");
@@ -46,7 +44,7 @@ public class CallApi extends HttpServlet {
     servletContext.setAttribute("connections", connectionsList);
    // logger.info(" CONNECTIONS LIST:  [ FROM WITHIN CALLAPI ] " + connectionsList);
 
-    RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
+    RequestDispatcher dispatcher = req.getRequestDispatcher("/connectionsImported.jsp");
     dispatcher.forward(req, resp);
 
 

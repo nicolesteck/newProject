@@ -23,14 +23,13 @@ public class ReadInConnections {
     private final Logger logger = LogManager.getLogger(this.getClass());
     User user;
 
-    public static void main(String args) {
-        //hi
-    }
+//    private static void main(String args) {
+//    }
 
     Set<String> readIn() throws IOException {
         //  private final Logger logger = LogManager.getLogger(this.getClass());
 
-        Set<String> connectionsList = new HashSet<String>();
+        Set<String> connectionsList = new HashSet<>();
         // Make a URL to the web page
         URL url = new URL("\n" +
                 "https://my.api.mockaroo.com/500_connections.json?key=94ce3ab0");
@@ -42,7 +41,7 @@ public class ReadInConnections {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
-        String line = null;
+        String line; //= null;
         // ObjectMapper mapper;
         int i = 0;
 
@@ -80,7 +79,7 @@ public class ReadInConnections {
         return connectionsList;
     }
 
-    public User findUser(int id) {
+    private final User findUser(int id) {
         GenericDao<User> localDao = new GenericDao<>(User.class);
         user = localDao.getById(id);
         return user;

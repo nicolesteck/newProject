@@ -8,7 +8,35 @@
 
     <!-- Header -->
     <header id="header" class="alt">
-        <%@include file="nav.jsp"%>
+        <h1 id="logo"><a href="archive/indexOld.html">Connection Annotation Tool</a></h1>
+        <nav id="nav">
+
+            <!--
+            <ul>
+                <li class="current"><a href="indexOld.html">Welcome</a></li>
+                <li class="submenu">
+                    <a href="#">Layouts</a>
+                    <ul>
+                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
+                        <li><a href="right-sidebar.html">Right Sidebar</a></li>
+                        <li><a href="no-sidebar.html">No Sidebar</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="submenu">
+                            <a href="#">Submenu</a>
+                            <ul>
+                                <li><a href="#">Dolore Sed</a></li>
+                                <li><a href="#">Consequat</a></li>
+                                <li><a href="#">Lorem Magna</a></li>
+                                <li><a href="#">Sed Magna</a></li>
+                                <li><a href="#">Ipsum Nisl</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#" class="button special">Sign Up</a></li>
+            </ul>
+       -->
+        </nav>
     </header>
 
     <!-- Banner -->
@@ -25,16 +53,10 @@
             <header>
                 <h2>ANNOTATE</h2>
             </header>
-            <p>This is <strong>Connection Annotator</strong>, a free
-                tool created by Nicole Steck for Madison Area Technical College's
-                Enterprise Java class, taught by Paula Waite. Spring 2018.
-                Thanks for signing up! Please log in to begin using the service.
-                </p>
-            <section class="wrapper style2 container special-alt">
-                <ul class="buttons">
-                    <li><a href="home.jsp" class="button special">Log In</a></li>
 
-                </ul>
+            <section class="wrapper style2 container special-alt">
+                <p><strong>Connections imported.</strong>
+                    View your connections <a href="allConnections">here.</a></p>
             </section>
             <!--
               <footer>

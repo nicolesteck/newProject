@@ -1,4 +1,4 @@
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+/*SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 CREATE SCHEMA IF NOT EXISTS `test_annotator` DEFAULT CHARACTER SET latin1 ;
@@ -19,3 +19,4 @@ insert into connections (id,linkedIn_id, interests, notes, user_id, first_name, 
 insert into connections (id,linkedIn_id, interests, notes, user_id, first_name, last_name, company) values (2, "1sefgtl22", "cats and giraffes and dogs", "likes animals", 2, "xinan","wan","wps");
 insert into connections (id,linkedIn_id, interests, notes, user_id, first_name, last_name, company) values (3, "125524ll1", "cats faces' but not dogs", "likes animals and stuff", 1, "paula","waite","madison college");
 insert into connections (id,linkedIn_id, interests, notes, user_id, first_name, last_name, company) values (4, "1352dfaw1", "cats", "likes few animals", 2, "benjamin","rasmussen","wps");
+*/

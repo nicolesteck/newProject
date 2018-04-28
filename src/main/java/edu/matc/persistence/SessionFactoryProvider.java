@@ -13,7 +13,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
  * @author paulawaite
  * @version 2.0 1/27/18.
  */
-public class SessionFactoryProvider {
+final class SessionFactoryProvider {
 
     private static SessionFactory sessionFactory;
 
@@ -28,7 +28,7 @@ public class SessionFactoryProvider {
     /**
      * Create session factory.
      */
-    public static void createSessionFactory() {
+    private static void createSessionFactory() {
 
         StandardServiceRegistry standardRegistry =
                 new StandardServiceRegistryBuilder().configure().build();

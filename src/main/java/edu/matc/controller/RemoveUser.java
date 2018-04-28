@@ -37,8 +37,8 @@ public class RemoveUser extends HttpServlet {
         String id = req.getParameter("id");
         int intId = Integer.parseInt(id);
         user = dao.getById(intId);
-        String firstName = user.getFirstName();
-        String lastName = user.getLastName();
+//        String firstName = user.getFirstName();
+//        String lastName = user.getLastName();
         dao.delete(user);
 
 

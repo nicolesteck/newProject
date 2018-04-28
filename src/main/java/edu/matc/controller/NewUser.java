@@ -22,10 +22,6 @@ import java.io.IOException;
         urlPatterns = {"/newUser"}
 )
 
-/**
- *  Displays action items
- */
-
 
 public class NewUser extends HttpServlet {
 

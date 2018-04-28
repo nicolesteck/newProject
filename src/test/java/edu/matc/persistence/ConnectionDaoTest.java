@@ -12,7 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ConnectionDaoTest {
+final class ConnectionDaoTest {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
@@ -20,7 +20,7 @@ public class ConnectionDaoTest {
     /**
      * The Generic dao.
      */
-    GenericDao<Connection> genericDao;
+    private GenericDao<Connection> genericDao;
 
     /**
      * Sets up.

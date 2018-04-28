@@ -9,6 +9,7 @@
 
     <header class="special container">
         <span class="icon fa-laptop"></span>
+        <%@include file="nav.jsp"%>
         <h2>View All <strong>Users</strong></h2>
     </header>
 
