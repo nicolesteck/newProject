@@ -13,26 +13,16 @@
                 <h6><a href="/nsindieproject/home.jsp" target="_self">Refresh</a></h6>
             <table>
                 <tr>
-                <!--
-                    <th>Relationship</th>
-                    <th>Shared Interests</th>
-                    <th>Connections</th>
-                    <th>Background</th>
-                    <th>Summary</th>
-                    -->
+                    <th>Name</th>
+                    <th>Company</th>
                     <th>Interests</th>
                     <th>Notes</th>
                 </tr>
                 <tr>
-              <%--
-                    <td class="spaced">${connection.relationship}</td>
-                    <td class="spaced">${connection.sharedInterests}</td>
-                    <td class="spaced">${connection.numberOfConnections}</td>
-                    <td class="spaced">${connection.background}</td>
-                    <td class="spaced">${connection.summary}</td>
-                    --%>
-                    <td>${connection.interests}</td>
-                    <td>${connection.notes}</td>
+                    <td class="spaced">${connection.firstName} ${connection.lastName}</td>
+                    <td class="spaced">${connection.company}</td>
+                    <td class="spaced">${connection.interests}</td>
+                    <td class="spaced">${connection.notes}</td>
                 </tr>
             </table>
 

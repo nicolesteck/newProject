@@ -57,7 +57,7 @@
             <p>This is <strong>Connection Annotator</strong>, a free
                 tool created by Nicole Steck for Madison Area Technical College's
                 Enterprise Java class, taught by Paula Waite. Spring 2018.
-                .</p>
+                </p>
             <h3><a href="https://my.api.mockaroo.com/Connections.json?key=9638ae60&redirect=localhost:8080/nsindieproject/importConnections">Import Your Connections!</a></h3>
 
           <!--
