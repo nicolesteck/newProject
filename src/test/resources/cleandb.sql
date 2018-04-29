@@ -4,6 +4,7 @@ use test_annotator;
 drop table if exists connections;
 create table connections (id int auto_increment primary key, linkedIn_id varchar(45) not null, interests varchar(5000) null, notes varchar(5000) null, user_id int not null, first_name varchar(50) null, last_name varchar(50) null, company varchar(255) null);
 create index fk_connections_user_idx on connections (user_id);
+CREATE TABLE `action_items` (`id` int(11) NOT NULL AUTO_INCREMENT, `date_created` date NOT NULL, `date_completed` date DEFAULT NULL,`action_item` varchar(5000) NOT NULL, `is_complete` tinyint(1) NOT NULL DEFAULT '0', `connections_id` int(11) NOT NULL, `user_id` int(11) NOT NULL, PRIMARY KEY (`id`), KEY `action_items_connections_id_fk` (`connections_id`), CONSTRAINT `action_items_connections_id_fk` FOREIGN KEY (`connections_id`) REFERENCES `connections` (`id`));
 drop table if exists role;
 create table role(id int auto_increment primary key, role_name varchar(45) null, email varchar(45) null, user_id int null, constraint email_UNIQUE unique (email));
 create index role_user_id_fk on role (user_id);

@@ -67,8 +67,8 @@
                                       <%--  <td>${curr.user.firstName}</td>
                                         <td>${curr.user.lastName}</td> --%>
                                         <td>${curr.firstName}</td>
-                                          <td>${curr.lastName}</td>
-                                          <td>${curr.company}</td>
+                                        <td>${curr.lastName}</td>
+                                        <td>${curr.company}</td>
                                         <td>${curr.interests}</td>
                                         <td>${curr.notes}</td>
 
