@@ -21,7 +21,7 @@ public class ReadInConnections {
     private final Logger logger = LogManager.getLogger(this.getClass());
     User user;
 
-    Set<String> readIn(Properties properties) throws IOException {
+    public Set<String> readIn(Properties properties) throws IOException {
         //  private final Logger logger = LogManager.getLogger(this.getClass());
 
         Set<String> connectionsList = new HashSet<>();

@@ -13,11 +13,35 @@
         </form-login-config>
     </login-config>
 
-    <!--Protect the home page. -->
+    <!-- Servlet protection - all registered users -->
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>home</web-resource-name>
-            <url-pattern>/home.jsp</url-pattern>
+            <web-resource-name>login</web-resource-name>
+            <url-pattern>/login</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>allConnections</web-resource-name>
+            <url-pattern>/allConnections</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>callApi</web-resource-name>
+            <url-pattern>/callApi</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>completeUpdate</web-resource-name>
+            <url-pattern>/completeUpdate</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>randomConnection</web-resource-name>
+            <url-pattern>/randomConnection</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>readInConnections</web-resource-name>
+            <url-pattern>/readInConnections</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>removeConnection</web-resource-name>
+            <url-pattern>/removeConnection</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>admin</role-name>
@@ -26,16 +50,111 @@
     </security-constraint>
 
 
-    <!--Protect the user administration page. -->
+    <!--Servlet protection - administrators-->
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>allUsers</web-resource-name>
             <url-pattern>/allUsers</url-pattern>
         </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>completeUserUpdate</web-resource-name>
+            <url-pattern>/completeUserUpdate</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>updateUser</web-resource-name>
+            <url-pattern>/updateUser</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>removeUser</web-resource-name>
+            <url-pattern>/removeUser</url-pattern>
+        </web-resource-collection>
         <auth-constraint>
             <role-name>admin</role-name>
         </auth-constraint>
     </security-constraint>
+
+    <!-- JSP Protection - All registered users -->
+    <security-constraint>
+    <web-resource-collection>
+        <web-resource-name>allConnectionsJsp</web-resource-name>
+        <url-pattern>/allConnections.jsp</url-pattern>
+    </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>connectionsImported.jsp</web-resource-name>
+            <url-pattern>/connectionsImported.jsp</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>randomConnection.jsp</web-resource-name>
+            <url-pattern>/randomConnection.jsp</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>updateInterests</web-resource-name>
+            <url-pattern>/updateInterests.jsp</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+            <role-name>user</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <!-- JSP Protection - Administrators -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>allUsersJsp</web-resource-name>
+            <url-pattern>/allUsers.jsp</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>updateUserJsp</web-resource-name>
+            <url-pattern>/updateUser.jsp</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+            <role-name>user</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <!-- Error handling -->
+    <error-page>
+        <error-code>400</error-code>
+        <location>/genericError.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>401</error-code>
+        <location>/genericError.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>402</error-code>
+        <location>/genericError.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/genericError.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/genericError.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/genericError.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>502</error-code>
+        <location>/genericError.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>503</error-code>
+        <location>/genericError.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>504</error-code>
+        <location>/genericError.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>505</error-code>
+        <location>/genericError.jsp</location>
+    </error-page>
+
 
     <security-role>
         <role-name>admin</role-name>
