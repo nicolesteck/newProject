@@ -1,7 +1,6 @@
 package edu.matc.controller;
 
 import edu.matc.entity.Connection;
-import edu.matc.entity.User;
 import edu.matc.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,11 +17,6 @@ import java.io.IOException;
 @WebServlet(
         urlPatterns = {"/completeUpdate"}
 )
-
-/**
- * A simple servlet to welcome the user.
- * @author pwaite
- */
 
 
 public class CompleteUpdate extends HttpServlet {

@@ -20,11 +20,6 @@ import java.io.IOException;
         urlPatterns = {"/allUsers"}
 )
 
-/**
- * A simple servlet to welcome the user.
- * @author pwaite
- */
-
 
 public class AllUsers extends HttpServlet {
 

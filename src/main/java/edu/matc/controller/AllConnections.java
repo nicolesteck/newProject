@@ -7,7 +7,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,10 +22,7 @@ import java.util.List;
         urlPatterns = {"/allConnections"}
 )
 
-/**
- * A simple servlet to welcome the user.
- * @author pwaite
- */
+
 
 
 public class AllConnections extends HttpServlet {
@@ -41,22 +37,21 @@ public class AllConnections extends HttpServlet {
         String userVal = req.getRemoteUser();
         GenericDao<User> localDao = new GenericDao<>(User.class);
         int userId = localDao.getByPropertyLike("email", userVal).get(0).getId();
-
-
         //int userId = (int)servletContext.getAttribute("userId");
         String userIdString = String.valueOf(userId);
         GenericDao<Connection> dao = new GenericDao<>(Connection.class);
-        GenericDao<User> userDao = new GenericDao<>(User.class);
         //req.setAttribute("connections", dao.getAll());
         req.setAttribute("connections", dao.getByPropertyEqualUserId(userId));
-        User user = localDao.getById(userId);
+     //   User user = localDao.getById(userId);
          List<Connection> connections = dao.getByPropertyEqualUserId(userId);
+         logger.debug(connections);
+
+       //  List<ActionItem> actionItems = aiDao.getByPropertyEqualActionItem(connectionId, userId);
         logger.debug("IN ALL CONNECTIONS: user id is " + userIdString);
         logger.debug("ConnectionDao.getByPropertyEqualUserId what is this?: " + dao.getByPropertyEqualUserId(userId));
         RequestDispatcher dispatcher = req.getRequestDispatcher("/allConnections.jsp");
         logger.debug(resp);
         logger.debug("RESPONSE HEADER NAMES: "  + resp.getHeaderNames());
-       // logger.debug("RESPONSE HEADERS: " + resp.getHeader());
         logger.debug("RESPONSE STATUS: " + resp.getStatus());
         logger.debug("REQUEST QUERY STRING: " + req.getQueryString());
         dispatcher.forward(req, resp);

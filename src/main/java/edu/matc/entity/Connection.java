@@ -2,11 +2,11 @@ package edu.matc.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
-import java.util.List;
-//import java.util.Objects;
+import java.util.HashSet;
+import java.util.Set;
 
-@Entity(name = "connections")
-@Table(name="connections")
+@Entity(name = "connection")
+@Table(name="connection")
 public class Connection {
 
 
@@ -32,6 +32,9 @@ public class Connection {
 
     @ManyToOne
     private User user;
+
+    @OneToMany(mappedBy="connection", cascade=CascadeType.REMOVE, fetch=FetchType.EAGER)
+    private Set<ActionItem> actionItems = new HashSet<>();
 
     @Column(name="linkedIn_id")
     private String linkedInId;
@@ -116,6 +119,10 @@ public class Connection {
     public void setCompany(String company) {
         this.company = company;
     }
+
+    public User getUser() {return user;}
+
+    public void setUser(User user) {this.user = user; }
 
     public String getLinkedInId() {
         return linkedInId;

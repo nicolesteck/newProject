@@ -1,6 +1,5 @@
 package edu.matc.controller;
 
-import edu.matc.entity.Connection;
 import edu.matc.entity.User;
 import edu.matc.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
@@ -37,12 +36,11 @@ public class RemoveUser extends HttpServlet {
         String id = req.getParameter("id");
         int intId = Integer.parseInt(id);
         user = dao.getById(intId);
+        logger.info(id);
 //        String firstName = user.getFirstName();
 //        String lastName = user.getLastName();
         dao.delete(user);
 
-
-       // req.setAttribute("Status", firstName + " " + lastName + " has been removed from your database.");
         RequestDispatcher dispatcher = req.getRequestDispatcher("/removalSuccess.jsp");
 
         dispatcher.forward(req, resp);

@@ -6,9 +6,8 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-//import java.util.Objects;
+
 
 @Entity(name = "user")
 @Table(name="user")
@@ -103,6 +102,8 @@ public class User {
     }
 
     public Set<Role> getRoles() { return roles; }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

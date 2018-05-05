@@ -1,6 +1,5 @@
 package edu.matc.controller;
 
-import edu.matc.entity.Connection;
 import edu.matc.entity.Role;
 import edu.matc.entity.User;
 import edu.matc.persistence.GenericDao;
@@ -20,10 +19,6 @@ import java.io.IOException;
         urlPatterns = {"/completeUserUpdate"}
 )
 
-/**
- * A simple servlet to welcome the user.
- * @author pwaite
- */
 
 
 public class CompleteUserUpdate extends HttpServlet {
@@ -40,12 +35,12 @@ public class CompleteUserUpdate extends HttpServlet {
         User user;
         Role role;
 
-        String id = (String)req.getParameter("id");
+        String id = req.getParameter("id");
         int intId = Integer.parseInt(id);
-        String firstName = (String)req.getParameter("firstName");
-        String lastName = (String)req.getParameter("lastName");
-        String email = (String)req.getParameter("email");
-        String roleName = (String)req.getParameter("roleName");
+        String firstName = req.getParameter("firstName");
+        String lastName = req.getParameter("lastName");
+        String email = req.getParameter("email");
+        String roleName = req.getParameter("roleName");
         user = dao.getById(intId);
         role = roleDao.getByPropertyEqualUserId(intId).get(0);
         user.setLastName(lastName);

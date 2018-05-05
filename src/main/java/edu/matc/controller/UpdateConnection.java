@@ -1,7 +1,6 @@
 package edu.matc.controller;
 
 import edu.matc.entity.Connection;
-import edu.matc.entity.User;
 import edu.matc.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,11 +17,6 @@ import java.io.IOException;
 @WebServlet(
         urlPatterns = {"/updateConnection"}
 )
-
-/**
- * A simple servlet to welcome the user.
- * @author pwaite
- */
 
 
 public class UpdateConnection extends HttpServlet {
@@ -45,7 +39,7 @@ public class UpdateConnection extends HttpServlet {
 //        logger.debug("RESPONSE STATUS: " + resp.getStatus());
 //        logger.debug("REQUEST QUERY STRING: " + req.getQueryString());
 //
-        String linkedInId = (String)req.getParameter("linkedInId");
+        String linkedInId = req.getParameter("linkedInId");
         logger.debug("THE LINKEDIN ID IS: " + linkedInId);
 
         req.setAttribute("connection", dao.getByPropertyEqual("linkedInId", linkedInId));

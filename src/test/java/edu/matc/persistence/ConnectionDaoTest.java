@@ -16,7 +16,6 @@ final class ConnectionDaoTest {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
-
     /**
      * The Generic dao.
      */

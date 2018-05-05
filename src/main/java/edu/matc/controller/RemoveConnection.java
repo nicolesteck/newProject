@@ -19,11 +19,7 @@ import java.io.IOException;
 )
 
 
-
-
 public class RemoveConnection extends HttpServlet {
-
-
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
@@ -33,10 +29,11 @@ public class RemoveConnection extends HttpServlet {
 
         Connection connection;
 
-        String linkedInId = (String)req.getParameter("linkedInId");
+        String linkedInId = req.getParameter("linkedInId");
         connection = dao.getByPropertyEqual("linkedInId", linkedInId).get(0);
         String firstName = connection.getFirstName();
         String lastName = connection.getLastName();
+        logger.info("name: " + firstName + " " + lastName);
         dao.delete(connection);
 
 

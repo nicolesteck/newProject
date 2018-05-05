@@ -45,21 +45,21 @@
 
 ### Week 8: Web Services (SOAP) - CHECKPOINT 3
 - [X] Create All Connections JSP
-- [ ] Integrate with LinkedIn API
+- [X] Integrate with Mockify API
 - [X] Journal
 
 ### Week 9: REST
-- [ ] Create Refresh Network JSP
-- [X] Create relationships between tables (Connection Info to Connection Update, etc.)
+- [X] Create relationships between tables 
+- [X] Completely start over and redesign database to resolve relationship issues (Note: this was not a planned step)
 - [ ] Test relationships
 - [ ] Journal
 
 ### Week 10
-- [ ] Unit test all relationships and LI API
+- [ ] Unit test all relationships and Mockify API
 - [ ] Journal
 
 ### Week 11: Multithreading
-- [ ] Review rubric
+- [X] Review rubric
 - [ ] Journal
 
 ### Week 12

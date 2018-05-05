@@ -2,8 +2,6 @@ package edu.matc.controller;
 
 import edu.matc.entity.User;
 import edu.matc.persistence.GenericDao;
-import org.apache.http.HttpRequest;
-import org.apache.http.HttpResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 
 @WebServlet(
@@ -23,42 +21,29 @@ import java.util.Set;
 public class CallApi extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
-
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        ServletContext servletContext;
-
-
-        String userVal = req.getRemoteUser();
-        logger.info("~~~~~~~~~~~~~~~~~~~~~USERVAL: ~~~~~~~~~~~~~~~~~~~~~~~~~" + userVal + "~~(IN DOGET)~~~");
-       // identifyUser(req);
-       logger.info("~~~~~~~~~~~~~~~~~~~~~USERVAL: ~~~~~~~~~~~~~~~~~~~~~~~~~" + userVal + "~~(IN ID USER)[jk]~~~");
-        GenericDao<User> localDao = new GenericDao<>(User.class);
-        int id = localDao.getByPropertyLike("email", userVal).get(0).getId();
-        logger.info("~~~~~~~~~~~~~~~~~~~~~USER ID: ~~~~~~~~~~~~~~~~~~~~~~~~~" + id + "~~~~~");
-        servletContext = getServletContext();
-        servletContext.setAttribute("userId", id);
-
-
+        ServletContext servletContext = getServletContext();
+        int id = identifyUser(req, servletContext);
+        Properties properties = (Properties)servletContext.getAttribute("annotatorProperties");
         ReadInConnections read = new ReadInConnections(id);
-        Set<String> connectionsList = read.readIn();
-    servletContext.setAttribute("connections", connectionsList);
-   // logger.info(" CONNECTIONS LIST:  [ FROM WITHIN CALLAPI ] " + connectionsList);
+        Set<String> connectionsList = read.readIn(properties);
+        servletContext.setAttribute("connections", connectionsList);
 
-    RequestDispatcher dispatcher = req.getRequestDispatcher("/connectionsImported.jsp");
-    dispatcher.forward(req, resp);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/connectionsImported.jsp");
+        dispatcher.forward(req, resp);
 
 
     }
 
-   /* public int identifyUser(HttpServletRequest req, ServletContext servletContext) {
+    private int identifyUser(HttpServletRequest req, ServletContext servletContext) {
         String userVal = req.getRemoteUser();
-        logger.info("~~~~~~~~~~~~~~~~~~~~~USERVAL: ~~~~~~~~~~~~~~~~~~~~~~~~~" + userVal + "~~(IN ID USER)~~~");
+        logger.info("userVal " + userVal + " in identifyUser");
         GenericDao<User> localDao = new GenericDao<>(User.class);
         int id = localDao.getByPropertyLike("email", userVal).get(0).getId();
-        logger.info("~~~~~~~~~~~~~~~~~~~~~USER ID: ~~~~~~~~~~~~~~~~~~~~~~~~~" + id + "~~~~~");
+        logger.info("userId " + id + " in identifyUser");
         servletContext.setAttribute("userId", id);
         return id;
 
     }
-    */
+
 }

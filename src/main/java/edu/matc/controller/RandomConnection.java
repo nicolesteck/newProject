@@ -20,10 +20,6 @@ import java.io.IOException;
         urlPatterns = {"/randomConnection"}
 )
 
-/**
- * A simple servlet to welcome the user.
- * @author pwaite
- */
 
 
 public class RandomConnection extends HttpServlet {

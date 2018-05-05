@@ -24,27 +24,17 @@ public class LogIn extends HttpServlet {
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         ServletContext servletContext;
-
-
         String userVal = req.getRemoteUser();
-       // logger.info("~~~~~~~~~~~~~~~~~~~~~USERVAL: ~~~~~~~~~~~~~~~~~~~~~~~~~" + userVal + "~~(IN DOGET)~~~");
-
-        // identifyUser(req);
-
-       // logger.info("~~~~~~~~~~~~~~~~~~~~~USERVAL: ~~~~~~~~~~~~~~~~~~~~~~~~~" + userVal + "~~(IN ID USER)[jk]~~~");
         GenericDao<User> localDao = new GenericDao<>(User.class);
-      //  GenericDao<Role> roleDao = new GenericDao<>(Role.class);
         int id = localDao.getByPropertyLike("email", userVal).get(0).getId();
         User user = localDao.getById(id);
-        Role role = user.getRoles().iterator().next();;
+        Role role = user.getRoles().iterator().next();
         int roleId = role.getId();
         String roleName = role.getRoleName();
-
         logger.info("~~~~~~~~~~~~~~~~~~~~~ROLE ID: ~~~~~~~~~~~~~~~~~~~~~~~~~" + roleId + "~~~~~" + roleName);
         servletContext = getServletContext();
         servletContext.setAttribute("userId", id);
         servletContext.setAttribute("role", roleName);
-
         RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
         dispatcher.forward(req, resp);
     }

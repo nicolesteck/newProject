@@ -120,7 +120,7 @@ public class GenericDao<T> {
      * @return the int
      */
     public int insert(T entity) {
-        int id = 0;
+        int id;
         Session session = getSession();
         Transaction transaction = session.beginTransaction();
         id = (int)session.save(entity);
@@ -169,7 +169,7 @@ public class GenericDao<T> {
         return list;
     }
 
-    public List<T> getByPropertyEqual(String propertyName, String value) {
+    public List<T> getByPropertyEqual(String propertyName, Object value) {
         Session session = getSession();
 
         logger.debug("Searching for " + propertyName + " = " + value);
@@ -186,7 +186,17 @@ public class GenericDao<T> {
     }
 
 
+    public List<T> getByPropertyEqualActionItem(int connectionId){
+        Session session = getSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        query.select(root).where(
+                builder.and(
+                         builder.equal(root.get("id"), connectionId)));
 
+        return session.createQuery(query).getResultList();
+    }
 
 
 

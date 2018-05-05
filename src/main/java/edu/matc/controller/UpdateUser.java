@@ -1,6 +1,6 @@
 package edu.matc.controller;
 
-import edu.matc.entity.Connection;
+
 import edu.matc.entity.User;
 import edu.matc.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
@@ -19,12 +19,6 @@ import java.io.IOException;
         urlPatterns = {"/updateUser"}
 )
 
-/**
- * A simple servlet to welcome the user.
- * @author pwaite
- */
-
-
 public class UpdateUser extends HttpServlet {
 
 
@@ -36,8 +30,8 @@ public class UpdateUser extends HttpServlet {
 //
         GenericDao<User> dao = new GenericDao<>(User.class);
 
-        String id = (String)req.getParameter("id");
-        int intId = Integer.parseInt(id);
+        String id = req.getParameter("id");
+      //  int intId = Integer.parseInt(id);
         logger.debug("THE USER ID IS: " + id);
 
         req.setAttribute("user", dao.getByPropertyEqual("id", id));

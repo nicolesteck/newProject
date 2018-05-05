@@ -49,16 +49,16 @@
 
                                     <tr>
 
-                                        <th>First</td>
-                                        <th>Last</td>
+                                        <th>First</th>
+                                        <th>Last</th>
                                         <!--
                                            <th>Connections</td>
                                           <th>Summary</td>
                                        -->
-                                        <th>Company</td>
-                                        <th>Interests</td>
-                                        <th>Notes</td>
-                                        <th>Update</td>
+                                        <th>Company</th>
+                                        <th>Interests</th>
+                                        <th>Notes</th>
+                                        <th>Update</th>
                                     </tr>
 
                                 <c:forEach var="curr" items="${connections}">
