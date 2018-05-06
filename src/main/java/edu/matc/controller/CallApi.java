@@ -27,8 +27,8 @@ public class CallApi extends HttpServlet {
 
     /**
      * *
-     * @param req
-     * @param resp
+     * @param req the servlet request
+     * @param resp the servlet response
      * @throws IOException
      * @throws ServletException
      */
@@ -46,6 +46,12 @@ public class CallApi extends HttpServlet {
 
     }
 
+    /**
+     *
+     * @param req the servlet request
+     * @param servletContext the servlet context used to set attributes into the servlet
+     * @return
+     */
     private int identifyUser(HttpServletRequest req, ServletContext servletContext) {
         String userVal = req.getRemoteUser();
         logger.info("userVal " + userVal + " in identifyUser");

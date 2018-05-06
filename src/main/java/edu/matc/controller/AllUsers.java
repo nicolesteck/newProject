@@ -24,6 +24,13 @@ public class AllUsers extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     *
+     * @param req the servlet request
+     * @param resp the servlet response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Retrieve all users

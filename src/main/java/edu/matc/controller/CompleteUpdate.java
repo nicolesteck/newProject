@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
+/**
+ * The servlet that completes updates made
+ */
 @WebServlet(
         urlPatterns = {"/completeUpdate"}
 )
@@ -21,16 +24,20 @@ import java.io.IOException;
 
 public class CompleteUpdate extends HttpServlet {
 
-
-
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     *
+     * @param req the servlet request
+     * @param resp the servlet response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // Retrieve the connection information using the LinkedInId
         GenericDao<Connection> dao = new GenericDao<>(Connection.class);
-
         Connection connection;
-
         String linkedInId = (String)req.getParameter("linkedInId");
         logger.debug("LINKED IN ID IN COMPLETE UPDATE: " + linkedInId);
         String firstName = (String)req.getParameter("firstName");
@@ -38,6 +45,8 @@ public class CompleteUpdate extends HttpServlet {
         String company = (String)req.getParameter("company");
         String interests = (String)req.getParameter("interests");
         String notes = (String)req.getParameter("notes");
+
+        // Set the retrieved values to this connection
         connection = dao.getByPropertyEqual("linkedInId", linkedInId).get(0);
         connection.setLastName(lastName);
         connection.setInterests(interests);
@@ -45,7 +54,7 @@ public class CompleteUpdate extends HttpServlet {
         connection.setCompany(company);
         connection.setNotes(notes);
 
-
+        // Update the connection's values in the database and then forward on
         req.setAttribute("connection", dao.getByPropertyEqual("linkedInId", linkedInId));
         RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
         dao.saveOrUpdate(connection);

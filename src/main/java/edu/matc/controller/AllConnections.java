@@ -32,7 +32,7 @@ public class AllConnections extends HttpServlet {
     /**
      *
      * @param req the servlet request
-     * @param resp the servlet response 
+     * @param resp the servlet response
      * @throws ServletException
      * @throws IOException
      */
