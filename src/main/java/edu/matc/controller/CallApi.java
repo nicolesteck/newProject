@@ -15,6 +15,9 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.Set;
 
+/**
+ * The servlet that initiates the API call
+ */
 @WebServlet(
         name="callApi",
         urlPatterns = {"/callApi"}
@@ -22,6 +25,13 @@ import java.util.Set;
 public class CallApi extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     * *
+     * @param req
+     * @param resp
+     * @throws IOException
+     * @throws ServletException
+     */
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         ServletContext servletContext = getServletContext();
         int id = identifyUser(req, servletContext);

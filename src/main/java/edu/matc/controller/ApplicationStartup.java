@@ -9,6 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import java.util.Properties;
 
+/**
+ * The startup servlet, loaded right away, which places the properties file
+ * into the servlet context so it can be reached throughout the application.
+ */
 @WebServlet(
         name = "applicationStartup",
         urlPatterns = { "/startup" },

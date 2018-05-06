@@ -4,6 +4,9 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.Date;
 
+/**
+ * The type Action item.
+ */
 @Entity(name = "actionItems")
 @Table(name="action_items")
 public class ActionItem {
@@ -24,6 +27,9 @@ public class ActionItem {
     @Column(name="is_complete")
     private Boolean isComplete;
 
+    /**
+     * The User id.
+     */
     @Column(name="user_id")
     public int userId;
 
@@ -33,9 +39,21 @@ public class ActionItem {
     private Connection connection;
 
 
+    /**
+     * Instantiates a new Action item.
+     */
     public ActionItem() {
     }
 
+    /**
+     * Instantiates a new Action item.
+     *
+     * @param dateCreated the date created
+     * @param connection  the connection
+     * @param actionItem  the action item
+     * @param isComplete  whether the item is complete
+     * @param userId      the user id
+     */
     public ActionItem(Date dateCreated, Connection connection, String actionItem, Boolean isComplete, int userId) {
         this.dateCreated = dateCreated;
         this.connection = connection;
@@ -44,10 +62,20 @@ public class ActionItem {
         this.userId = userId;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(int id) {
         this.id = id;
     }
@@ -61,39 +89,85 @@ public class ActionItem {
         return actionItem;
     }
 
+    /**
+     * Gets complete.
+     *
+     * @return the complete
+     */
     public Boolean getComplete() {
         return isComplete;
     }
 
+    /**
+     * Gets user id.
+     *
+     * @return the user id
+     */
     public int getUserId() {
         return userId;
     }
 
+    /**
+     * Gets connection.
+     *
+     * @return the connection
+     */
     public Connection getConnection() {
         return connection;
     }
 
+    /**
+     * Sets date created.
+     *
+     * @param dateCreated the date created
+     */
     public void setDateCreated(Date dateCreated) {
         this.dateCreated = dateCreated;
     }
 
 
+    /**
+     * Sets action item.
+     *
+     * @param actionItem the action item
+     */
     public void setActionItem(String actionItem) {
         this.actionItem = actionItem;
     }
 
+    /**
+     * Sets complete.
+     *
+     * @param complete the complete
+     */
     public void setComplete(Boolean complete) {
         isComplete = complete;
     }
 
+    /**
+     * Sets user id.
+     *
+     * @param userId the user id
+     */
     public void setUserId(int userId) {
         this.userId = userId;
     }
 
+    /**
+     * Sets connection.
+     *
+     * @param connection the connection
+     */
     public void setConnection(Connection connection) {
         this.connection = connection;
     }
 
+    /**
+     * Gets connection id.
+     *
+     * @param connection the connection
+     * @return the connection id
+     */
     public int getConnectionId(Connection connection) {return connection.getId();}
 
     //public void setConnectionId() {this.connection.getId() = connection.getId(); }

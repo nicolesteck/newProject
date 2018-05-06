@@ -20,18 +20,17 @@ import java.io.IOException;
         urlPatterns = {"/allUsers"}
 )
 
-
 public class AllUsers extends HttpServlet {
-
-
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        // Retrieve all users
         GenericDao<User> dao = new GenericDao<>(User.class);
         req.setAttribute("users", dao.getAll());
+
+        // Forward to the User display JSP
         RequestDispatcher dispatcher = req.getRequestDispatcher("/allUsers.jsp");
         dispatcher.forward(req, resp);
         logger.info("In the doGet of allUsers");
