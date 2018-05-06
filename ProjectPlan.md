@@ -32,16 +32,16 @@
 - [X] Combine the three "Connection" tables (Detail, Updates, and -) into one
 - [X] Create db on AWS
 - [X] Create Connection table
-- [ ] Create Search JSP
+- [ ] Create Search JSP (Note: Ended up not using)
 - [X] Journal
 
 ### Week 7: Security Authentication
 - [X] Implement security authentication (username, password)
 - [X] Create Action Items table
-- [ ] Create Connections to Leverage table
-- [ ] Create Add Annotation JSP
-- [ ] Create user login JSP
-- [ ] Journal
+- [ ] Create Connections to Leverage table (Note: Unable to use due to LI OAuth limitations)
+- [ ] Create Add Annotation JSP (Note: Redesigned database and did not need this)
+- [X] Create user login JSP
+- [X] Journal
 
 ### Week 8: Web Services (SOAP) - CHECKPOINT 3
 - [X] Create All Connections JSP
@@ -51,11 +51,11 @@
 ### Week 9: REST
 - [X] Create relationships between tables 
 - [X] Completely start over and redesign database to resolve relationship issues (Note: this was not a planned step)
-- [ ] Test relationships
+- [X] Test relationships
 - [ ] Journal
 
 ### Week 10
-- [ ] Unit test all relationships and Mockify API
+- [ ] Unit test all relationships and Mockaroo API
 - [ ] Journal
 
 ### Week 11: Multithreading

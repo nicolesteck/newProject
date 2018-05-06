@@ -1,5 +1,4 @@
-package edu.matc.controller;
-
+package edu.matc.util;
 
 import edu.matc.entity.Connection;
 import edu.matc.entity.User;

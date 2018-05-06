@@ -50,10 +50,6 @@ public class AllConnections extends HttpServlet {
         logger.debug("IN ALL CONNECTIONS: user id is " + userIdString);
         logger.debug("ConnectionDao.getByPropertyEqualUserId what is this?: " + dao.getByPropertyEqualUserId(userId));
         RequestDispatcher dispatcher = req.getRequestDispatcher("/allConnections.jsp");
-        logger.debug(resp);
-        logger.debug("RESPONSE HEADER NAMES: "  + resp.getHeaderNames());
-        logger.debug("RESPONSE STATUS: " + resp.getStatus());
-        logger.debug("REQUEST QUERY STRING: " + req.getQueryString());
         dispatcher.forward(req, resp);
 
         logger.info("In the doGet of allConnections");

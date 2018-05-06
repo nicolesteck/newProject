@@ -1,35 +1,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="head.jsp"%>
-
 <html><body>
 
-<%@include file="nav.jsp"%>
+
 <!-- Main -->
 <article id="main">
 
     <header class="special container">
+        <%@include file="nav.jsp"%>
         <span class="icon fa-laptop"></span>
-        <h2>View All <strong>Connections</strong></h2>
     </header>
-
-    <!-- One -->
-    <section class="wrapper style4 container">
-
-        <div class="row 150%">
-            <div class="4u 12u(narrower)">
-
-                <!-- Sidebar -->
-                <div class="sidebar">
-                    <section>
-                        <header>
-                            <h3>LEFT SIDEBAR</h3>
-                        </header>
-
-                    </section>
-                </div>
-
-            </div>
-            <div class="8u 12u(narrower) important(narrower)">
 
                 <!-- Content -->
                 <div class="content">
