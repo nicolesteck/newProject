@@ -16,10 +16,25 @@ import java.net.URLConnection;
 import java.util.*;
 
 
+/**
+ * The class that completes the business logic for reading
+ * connections in and parsing them into POJOs
+ * @author nicolesteck
+ */
 public class ReadInConnections {
     private final Logger logger = LogManager.getLogger(this.getClass());
-    User user;
+    /**
+     * The User.
+     */
+    private User user;
 
+    /**
+     * Read in set.
+     *
+     * @param properties the properties
+     * @return the set
+     * @throws IOException the io exception
+     */
     public Set<String> readIn(Properties properties) throws IOException {
         //  private final Logger logger = LogManager.getLogger(this.getClass());
 
@@ -61,12 +76,17 @@ public class ReadInConnections {
         return connectionsList;
     }
 
-    private final User findUser(int id) {
+    private User findUser(int id) {
         GenericDao<User> localDao = new GenericDao<>(User.class);
         user = localDao.getById(id);
         return user;
     }
 
+    /**
+     * Instantiates a new Read in connections.
+     *
+     * @param id the id
+     */
     public ReadInConnections(int id) {
         user = findUser(id);
     }

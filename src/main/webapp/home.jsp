@@ -58,7 +58,6 @@
                 tool created by Nicole Steck for Madison Area Technical College's
                 Enterprise Java class, taught by Paula Waite. Spring 2018.
                 </p>
-            <h3><a href="https://my.api.mockaroo.com/Connections.json?key=9638ae60&redirect=localhost:8080/nsindieproject/importConnections">Import Your Connections!</a></h3>
 
           <!--
             <footer>
@@ -81,37 +80,37 @@
             <c:import url="/randomConnection"/>
         </section>
 
-        <!-- Two -->
-        <section class="wrapper style1 container special">
-            <ul class="buttons">
-                <li><a href="allUsers" class="button special">View All Users</a></li>
-                <li><a href="allConnections" class="button">View All Connections</a></li>
-            </ul>
-        </section>
+        <%--<!-- Two -->--%>
+        <%--<section class="wrapper style1 container special">--%>
+            <%--<ul class="buttons">--%>
+                <%--<li><a href="allUsers" class="button special">View All Users</a></li>--%>
+                <%--<li><a href="allConnections" class="button">View All Connections</a></li>--%>
+            <%--</ul>--%>
+        <%--</section>--%>
 
-        <!-- Three -->
-        <section class="wrapper style3 container special">
-            <ul class="buttons">
-                <li><a href="allUsers" class="button special">View All Users</a></li>
-                <li><a href="allConnections" class="button">View All Connections</a></li>
-            </ul>
-        </section>
+        <%--<!-- Three -->--%>
+        <%--<section class="wrapper style3 container special">--%>
+            <%--<ul class="buttons">--%>
+                <%--<li><a href="allUsers" class="button special">View All Users</a></li>--%>
+                <%--<li><a href="allConnections" class="button">View All Connections</a></li>--%>
+            <%--</ul>--%>
+        <%--</section>--%>
 
-    </article>
+    <%--</article>--%>
 
     <!-- CTA -->
     <section id="cta">
 
-        <header>
-            <h2>Ready to do <strong>something</strong>?</h2>
-            <p>Proin a ullamcorper elit, et sagittis turpis integer ut fermentum.</p>
-        </header>
-        <footer>
-            <ul class="buttons">
-                <li><a href="allUsers" class="button special">View All Users</a></li>
-                <li><a href="allConnections" class="button">View All Connections</a></li>
-            </ul>
-        </footer>
+        <%--<header>--%>
+            <%--<h2>Ready to do <strong>something</strong>?</h2>--%>
+            <%--<p>Proin a ullamcorper elit, et sagittis turpis integer ut fermentum.</p>--%>
+        <%--</header>--%>
+        <%--<footer>--%>
+            <%--<ul class="buttons">--%>
+                <%--<li><a href="allUsers" class="button special">View All Users</a></li>--%>
+                <%--<li><a href="allConnections" class="button">View All Connections</a></li>--%>
+            <%--</ul>--%>
+        <%--</footer>--%>
 
     </section>
 

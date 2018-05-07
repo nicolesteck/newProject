@@ -8,8 +8,7 @@
 
     <!-- Header -->
     <header id="header" class="alt">
-        <h1 id="logo"><a href="archive/indexOld.html">Connection Annotation Tool</a></h1>
-
+        <%@include file="nav.jsp"%>
     </header>
 
     <!-- Banner -->
@@ -26,24 +25,11 @@
             <header>
                 <h2>ANNOTATE</h2>
             </header>
-
-            <section class="wrapper style2 container special-alt">
-                <p><strong>Connections imported.</strong>
-                    View your connections <a href="allConnections">here.</a></p>
-            </section>
-            <!--
-              <footer>
-                  <ul class="buttons vertical">
-                      <li><a href="#main" class="button fit scrolly">Tell Me More</a></li>
-                  </ul>
-              </footer>
-              -->
-
+            <p>You have successfully removed that pesky user!
+                They won't be mucking around in your pretty pretty site anymore.</p>
         </div>
 
     </section>
-
-    <!-- Main -->
 
 
     <!-- Footer -->

@@ -56,7 +56,7 @@
             <p>This is <strong>Connection Annotator</strong>, a free
                 tool created by Nicole Steck for Madison Area Technical College's
                 Enterprise Java class, taught by Paula Waite. Spring 2018.
-                .</p>
+                </p>
             <section class="wrapper style2 container special-alt">
                 <ul class="buttons">
                     <li><a href="login" class="button special">Log In</a></li>

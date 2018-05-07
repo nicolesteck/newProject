@@ -6,8 +6,17 @@ import org.apache.logging.log4j.Logger;
 import java.util.*;
 import java.io.*;
 
+/**
+ * The interface Properties loader interface.
+ */
 public interface PropertiesLoaderInterface {
 
+    /**
+     * Load properties properties.
+     *
+     * @param propertiesFilePath the properties file path
+     * @return the properties
+     */
     default Properties loadProperties(String propertiesFilePath)  {
         final Logger logger = LogManager.getLogger(this.getClass());
 

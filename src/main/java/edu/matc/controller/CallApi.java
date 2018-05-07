@@ -17,6 +17,7 @@ import java.util.Set;
 
 /**
  * The servlet that initiates the API call
+ * @author nicolesteck
  */
 @WebServlet(
         name="callApi",
@@ -29,8 +30,8 @@ public class CallApi extends HttpServlet {
      * *
      * @param req the servlet request
      * @param resp the servlet response
-     * @throws IOException
-     * @throws ServletException
+     * @throws IOException an I/O exception
+     * @throws ServletException a servlet exception
      */
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         ServletContext servletContext = getServletContext();

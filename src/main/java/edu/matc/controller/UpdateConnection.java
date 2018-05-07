@@ -14,6 +14,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
+/**
+ * The servlet that collects a connection's information
+ * and then sends it on to the JSP where the user can make
+ * updates to their connection's information.
+ * @author nicolesteck
+ */
 @WebServlet(
         urlPatterns = {"/updateConnection"}
 )
@@ -21,32 +27,31 @@ import java.io.IOException;
 
 public class UpdateConnection extends HttpServlet {
 
-
-
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     *
+     * @param req the servlet request
+     * @param resp the servlet response
+     * @throws ServletException a servlet exception
+     * @throws IOException an I/O exception
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//
+
+        // Connect to the database
         GenericDao<Connection> dao = new GenericDao<>(Connection.class);
-       // GenericDao<User> userDao = new GenericDao<>(User.class);
-//        req.setAttribute("connections", dao.getAll());
-//        logger.debug("USERdao.getAll what is this?: " + userDao.getAll().get(0));
-//
-//        logger.debug(resp);
-//        logger.debug("RESPONSE HEADER NAMES: "  + resp.getHeaderNames());
-//        // logger.debug("RESPONSE HEADERS: " + resp.getHeader());
-//        logger.debug("RESPONSE STATUS: " + resp.getStatus());
-//        logger.debug("REQUEST QUERY STRING: " + req.getQueryString());
-//
+
+        // Retrieve the connection information from the request
         String linkedInId = req.getParameter("linkedInId");
         logger.debug("THE LINKEDIN ID IS: " + linkedInId);
 
+        // Set the connection information into the request and forward
+        // to the JSP where the updates will be made
         req.setAttribute("connection", dao.getByPropertyEqual("linkedInId", linkedInId));
         RequestDispatcher dispatcher = req.getRequestDispatcher("/updateInterests.jsp");
         logger.info("In the doGet of UpdateConnection");
         dispatcher.forward(req, resp);
-
 
     }
 

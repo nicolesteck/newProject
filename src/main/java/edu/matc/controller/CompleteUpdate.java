@@ -16,6 +16,7 @@ import java.io.IOException;
 
 /**
  * The servlet that completes updates made
+ * @author nicolesteck
  */
 @WebServlet(
         urlPatterns = {"/completeUpdate"}
@@ -30,8 +31,8 @@ public class CompleteUpdate extends HttpServlet {
      *
      * @param req the servlet request
      * @param resp the servlet response
-     * @throws ServletException
-     * @throws IOException
+     * @throws ServletException a servlet exception
+     * @throws IOException an I/O exception
      */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -56,7 +57,7 @@ public class CompleteUpdate extends HttpServlet {
 
         // Update the connection's values in the database and then forward on
         req.setAttribute("connection", dao.getByPropertyEqual("linkedInId", linkedInId));
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("connectionsUpdated.jsp");
         dao.saveOrUpdate(connection);
         logger.info("In the doGet of CompleteUpdate");
         dispatcher.forward(req, resp);

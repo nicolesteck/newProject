@@ -7,10 +7,13 @@
 <!-- Main -->
 <article id="main">
 
+    <header id="header" >
+        <%@include file="nav.jsp"%>
+        <br />
+    </header>
     <header class="special container">
         <span class="icon fa-laptop"></span>
-        <%@include file="nav.jsp"%>
-        <h2>View All <strong>Users</strong></h2>
+        <h2>Update</h2>
     </header>
 
     <!-- One -->
@@ -19,15 +22,7 @@
         <div class="row 150%">
             <div class="4u 12u(narrower)">
 
-                <!-- Sidebar -->
-                <div class="sidebar">
-                    <section>
-                        <header>
-                            <h3>LEFT SIDEBAR</h3>
-                        </header>
 
-                    </section>
-                </div>
 
             </div>
             <div class="8u 12u(narrower) important(narrower)">

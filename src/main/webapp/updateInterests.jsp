@@ -6,9 +6,13 @@
 <!-- Main -->
 <article id="main">
 
-    <header class="special container">
+    <header id="header" >
         <%@include file="nav.jsp"%>
+        <br />
+    </header>
+    <header class="special container">
         <span class="icon fa-laptop"></span>
+        <h2>Update</h2>
     </header>
 
                 <!-- Content -->

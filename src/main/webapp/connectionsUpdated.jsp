@@ -8,7 +8,7 @@
 
     <!-- Header -->
     <header id="header" class="alt">
-        <h1 id="logo"><a href="archive/indexOld.html">Connection Annotation Tool</a></h1>
+        <h1 id="logo">Connection Annotation Tool</h1>
 
     </header>
 
@@ -28,7 +28,7 @@
             </header>
 
             <section class="wrapper style2 container special-alt">
-                <p><strong>Connections imported.</strong>
+                <p><strong>Connections updated.</strong>
                     View your connections <a href="allConnections">here.</a></p>
             </section>
             <!--

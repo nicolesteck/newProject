@@ -7,6 +7,7 @@ import java.util.Objects;
 
 /**
  * The type Role.
+ * @author nicolesteck
  */
 @Entity(name = "Role")
 @Table(name = "role")
@@ -84,10 +85,20 @@ public class Role {
         this.user = user;
     }
 
+    /**
+     * Gets email.
+     *
+     * @return the email
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Sets email.
+     *
+     * @param email the email
+     */
     public void setEmail(String email) {
         this.email = email;
     }

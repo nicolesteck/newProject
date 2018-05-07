@@ -15,6 +15,7 @@ import java.io.IOException;
 
 /**
  * The type All users.
+ * @author nicolesteck
  */
 @WebServlet(
         urlPatterns = {"/allUsers"}
@@ -28,8 +29,8 @@ public class AllUsers extends HttpServlet {
      *
      * @param req the servlet request
      * @param resp the servlet response
-     * @throws ServletException
-     * @throws IOException
+     * @throws ServletException a servlet exception
+     * @throws IOException an I/O exception
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

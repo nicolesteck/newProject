@@ -8,23 +8,40 @@
             <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
             <c:forEach var="connection" items="${connections}">
             <header>
-               <%-- <h3><italic>Let's Talk About...</italic><bold> ${connection.firstName} ${connection.lastName}</bold></h3> --%>
+                <h3>Let's jump right in! Add some information about ${connection.firstName} ${connection.lastName}</h3>
             </header>
-                <h6><a href="/nsindieproject/home.jsp" target="_self">Refresh</a></h6>
-            <table>
+            <table style="width:100%">
                 <tr>
-                    <th>Name</th>
-                    <th>Company</th>
-                    <th>Interests</th>
-                    <th>Notes</th>
+                    <td style="width: 15em;">Name</td>
+                    <td style="width: 15em; padding-left: 20px;">Company</td>
+                    <td style="width: 30em; padding-left: 20px;">Interests</td>
+                    <td style="width: 40em; padding-left: 20px;">Notes</td>
                 </tr>
                 <tr>
-                    <td class="spaced">${connection.firstName} ${connection.lastName}</td>
-                    <td class="spaced">${connection.company}</td>
-                    <td class="spaced">${connection.interests}</td>
-                    <td class="spaced">${connection.notes}</td>
-                </tr>
+                    <td style="width: 15em;">${connection.firstName} ${connection.lastName}</td>
+                    <td style="width: 15em; padding-left: 20px;">${connection.company}</td>
+                    <c:choose>
+                        <c:when test="${empty connection.interests}">
+                            <td style="width: 30em; padding-left: 20px;">There's nothing here! Update ${connection.firstName}'s interests <a href="updateConnection?linkedInId=${connection.linkedInId}">now!</a></td>
+                        </c:when>
+                        <c:otherwise>
+                            <td style="width: 30em; padding-left: 20px;">${connection.interests}</td>
+                        </c:otherwise>
+                    </c:choose>
+                    <c:choose>
+                    <c:when test="${empty connection.notes}">
+                    <td style="width: 40em; padding-left: 20px;">No notes yet. Add some notes about ${connection.firstName} <a href="updateConnection?linkedInId=${connection.linkedInId}">now!</a></td>
+                    </c:when>
+                    <c:otherwise>
+                    <td style="width: 40em; padding-left: 20px;">${connection.notes}</td>
+                    </c:otherwise>
+                    </c:choose>
             </table>
+
+                  <h3>
+                      <a href="updateConnection?linkedInId=${connection.linkedInId}">Update your notes on ${connection.firstName} </a><br />
+                      <a href="removeConnection?linkedInId=${connection.linkedInId}">Remove ${connection.firstName} </a></td>
+                  </h3>
 
             </c:forEach>
 

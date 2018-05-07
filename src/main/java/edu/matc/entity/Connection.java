@@ -7,6 +7,7 @@ import java.util.Set;
 
 /**
  * The type Connection.
+ * @author nicolesteck
  */
 @Entity(name = "connection")
 @Table(name="connection")

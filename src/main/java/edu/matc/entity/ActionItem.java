@@ -6,6 +6,7 @@ import java.util.Date;
 
 /**
  * The type Action item.
+ * @author nicolesteck
  */
 @Entity(name = "actionItems")
 @Table(name="action_items")
@@ -51,7 +52,7 @@ public class ActionItem {
      * @param dateCreated the date created
      * @param connection  the connection
      * @param actionItem  the action item
-     * @param isComplete  whether the item is complete
+     * @param isComplete  the is complete
      * @param userId      the user id
      */
     public ActionItem(Date dateCreated, Connection connection, String actionItem, Boolean isComplete, int userId) {

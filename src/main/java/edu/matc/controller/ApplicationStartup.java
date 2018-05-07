@@ -12,6 +12,7 @@ import java.util.Properties;
 /**
  * The startup servlet, loaded right away, which places the properties file
  * into the servlet context so it can be reached throughout the application.
+ * @author nicolesteck
  */
 @WebServlet(
         name = "applicationStartup",
@@ -26,6 +27,7 @@ public class ApplicationStartup extends HttpServlet implements PropertiesLoaderI
      * The init method, run automatically on startup, loads the properties
      * from the Project 4 Properties file, gets the Servlet Context and
      * employee directory, and adds both to the Servlet Context.
+     * @throws ServletException a servlet exception
      */
     public void init() throws ServletException {
 
