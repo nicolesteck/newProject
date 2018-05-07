@@ -6,7 +6,8 @@
     <div class="content">
         <section>
             <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-            <c:forEach var="connection" items="${connections}">
+            <c:set var = "connection" scope="page" value = "${connections}" />
+
             <header>
                 <h3>Let's jump right in! Add some information about ${connection.firstName} ${connection.lastName}</h3>
             </header>
@@ -43,7 +44,7 @@
                       <a href="removeConnection?linkedInId=${connection.linkedInId}">Remove ${connection.firstName} </a></td>
                   </h3>
 
-            </c:forEach>
+
 
 
         </section>

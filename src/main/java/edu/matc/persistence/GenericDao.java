@@ -1,5 +1,6 @@
 package edu.matc.persistence;
 
+import edu.matc.entity.Connection;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Criteria;
@@ -132,15 +133,20 @@ public class GenericDao<T> {
     /**
      * Gets by random.
      *
-     * @return the object
+     * @return a randomly-selected connection
      */
-    public List<T> getRandom() {
-        Session session = getSession();
-        Criteria criteria = session.createCriteria(type);
-      //  criteria.add(Restrictions.eq('fieldVariable', anyValue));
-        criteria.add(Restrictions.sqlRestriction("1=1 order by rand()"));
-        criteria.setMaxResults(1);
-        return criteria.list();
+    public Connection getRandom() {
+
+            Session session = getSession();
+
+            // need to use NativeQuery because rand() is not available in all dbs
+            List<Connection> connections = (List<Connection>)session.createNativeQuery(
+                    "select * from connection u where 1 = 1 order by rand()"
+            ).addEntity(Connection.class).list();
+
+
+            return connections.get(0);
+
     }
 
     /**
