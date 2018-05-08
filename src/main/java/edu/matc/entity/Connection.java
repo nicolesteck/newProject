@@ -1,5 +1,7 @@
 package edu.matc.entity;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.HashSet;
@@ -9,6 +11,8 @@ import java.util.Set;
  * The type Connection.
  * @author nicolesteck
  */
+@Getter
+@Setter
 @Entity(name = "connection")
 @Table(name="connection")
 public class Connection {
@@ -88,146 +92,6 @@ public class Connection {
         this.firstName = firstName;
         this.lastName = lastName;
         this.company = company;
-    }
-
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * Gets interests.
-     *
-     * @return the interests
-     */
-    public String getInterests() {
-        return interests;
-    }
-
-    /**
-     * Sets interests.
-     *
-     * @param interests the interests
-     */
-    public void setInterests(String interests) {
-        this.interests = interests;
-    }
-
-    /**
-     * Gets notes.
-     *
-     * @return the notes
-     */
-    public String getNotes() {
-        return notes;
-    }
-
-    /**
-     * Sets notes.
-     *
-     * @param notes the notes
-     */
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
-
-    /**
-     * Gets first name.
-     *
-     * @return the first name
-     */
-    public String getFirstName() {
-        return firstName;
-    }
-
-    /**
-     * Sets first name.
-     *
-     * @param firstName the first name
-     */
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    /**
-     * Gets last name.
-     *
-     * @return the last name
-     */
-    public String getLastName() {
-        return lastName;
-    }
-
-    /**
-     * Sets last name.
-     *
-     * @param lastName the last name
-     */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    /**
-     * Gets company.
-     *
-     * @return the company
-     */
-    public String getCompany() {
-        return company;
-    }
-
-    /**
-     * Sets company.
-     *
-     * @param company the company
-     */
-    public void setCompany(String company) {
-        this.company = company;
-    }
-
-    /**
-     * Gets user.
-     *
-     * @return the user
-     */
-    public User getUser() {return user;}
-
-    /**
-     * Sets user.
-     *
-     * @param user the user
-     */
-    public void setUser(User user) {this.user = user; }
-
-    /**
-     * Gets linked in id.
-     *
-     * @return the linked in id
-     */
-    public String getLinkedInId() {
-        return linkedInId;
-    }
-
-    /**
-     * Sets linked in id.
-     *
-     * @param linkedInId the linked in id
-     */
-    public void setLinkedInId(String linkedInId) {
-        this.linkedInId = linkedInId;
     }
 
     @Override

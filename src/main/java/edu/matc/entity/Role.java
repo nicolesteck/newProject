@@ -1,5 +1,7 @@
 package edu.matc.entity;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -9,6 +11,8 @@ import java.util.Objects;
  * The type Role.
  * @author nicolesteck
  */
+@Getter
+@Setter
 @Entity(name = "Role")
 @Table(name = "role")
 public class Role {
@@ -47,79 +51,6 @@ public class Role {
         this.user = user;
         this.roleName = roleName;
         this.email = email;
-    }
-
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * Gets user.
-     *
-     * @return the user
-     */
-    public User getUser() {
-        return user;
-    }
-
-    /**
-     * Sets user.
-     *
-     * @param user the user
-     */
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    /**
-     * Gets email.
-     *
-     * @return the email
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * Sets email.
-     *
-     * @param email the email
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-
-    /**
-     * Gets role name.
-     *
-     * @return the role name
-     */
-    public String getRoleName() {
-        return roleName;
-    }
-
-    /**
-     * Sets role name.
-     *
-     * @param roleName the role name
-     */
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
     }
 
     @Override

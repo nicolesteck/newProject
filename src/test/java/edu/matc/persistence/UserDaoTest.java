@@ -126,6 +126,16 @@ class UserDaoTest {
         assertEquals(2, users.get(0).getId());
     }
 
+    @Test
+    void getByPropertyEqualUserIdSuccess() {
+        GenericDao<Role> roleDao = new GenericDao<>(Role.class);
+        Role role = roleDao.getByPropertyEqualUserId(2).get(0);
+        assertEquals("user", role.getRoleName());
+
+    }
+
+
+
     /**
      * Gets by property like.
      */

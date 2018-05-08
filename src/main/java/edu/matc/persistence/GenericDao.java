@@ -97,8 +97,8 @@ public class GenericDao<T> {
         logger.debug(query.getParameters());
         query.select(root).where(builder.equal(root.get("user"), id));
 
-     //   List<T> list = ;
-        return session.createQuery(query).getResultList();
+        List<T> list = session.createQuery(query).getResultList();
+        return list;
     }
 
     /**
