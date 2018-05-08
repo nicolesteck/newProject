@@ -49,7 +49,7 @@
                             <TR><TD>Last Name: <INPUT TYPE="TEXT" NAME="lastName"></TD></TR>
                             <TR><TD>Email: <INPUT TYPE="TEXT" NAME="email"></TD></TR>
                             <TR><TD>Password: <INPUT TYPE="PASSWORD" NAME="password"></TD></TR>
-                            <TR><TH><INPUT TYPE="SUBMIT" VALUE="Log In"></TH></TR>
+                            <TR><TH><INPUT TYPE="SUBMIT" VALUE="Sign Up"></TH></TR>
                         </TABLE>
                     </FORM>
                 </section>

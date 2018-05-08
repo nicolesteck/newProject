@@ -12,7 +12,7 @@
 <body>
 <nav id="nav">
     <ul>
-        <li class="current"><a href="index.jsp">Welcome</a></li>
+        <li class="current"><a href="home.jsp">Home</a></li>
         <c:choose>
             <c:when test="${empty pageContext.request.remoteUser}">
                 <li>
