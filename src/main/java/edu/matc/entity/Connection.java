@@ -41,9 +41,6 @@ public class Connection {
     @ManyToOne
     private User user;
 
-    @OneToMany(mappedBy="connection", cascade=CascadeType.REMOVE, fetch=FetchType.EAGER)
-    private Set<ActionItem> actionItems = new HashSet<>();
-
     @Column(name="linkedIn_id")
     private String linkedInId;
 

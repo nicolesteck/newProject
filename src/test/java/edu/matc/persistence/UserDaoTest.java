@@ -84,26 +84,6 @@ class UserDaoTest {
         assertEquals(newUser, insertedUser);
 
     }
-//
-//    /**
-//     * Insert with connection success.
-//     */
-//    @Test
-//    void insertWithConnectionSuccess() {
-//        User newUser = new User("John", "TrebekConnect");
-//        Connection connection = new Connection(newUser);
-//
-//        newUser.addConnection(connection);
-//
-//        int id = genericDao.insert(newUser);
-//
-//        assertEquals(1, newUser.getConnections().size());
-//
-//        assertNotEquals(0,id);
-//        User insertedUser = (User)genericDao.getById(id);
-//        assertEquals(newUser, insertedUser);
-//
-//    }
 
     /**
      * Delete success.
@@ -134,6 +114,13 @@ class UserDaoTest {
 
     }
 
+    @Test
+    void addRoleSuccess() {
+        User newUser = new User("Joseph", "McFedden","mcfedden@gmail.com","supersecret");
+        Role role = new Role(newUser, "user", "mcfedden@gmail.com");
+        newUser.addRole(role);
+        assertEquals(newUser.getRoles().iterator().next().getRoleName(), "user");
+    }
 
 
     /**
