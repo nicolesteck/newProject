@@ -52,31 +52,32 @@
 - [X] Create relationships between tables 
 - [X] Completely start over and redesign database to resolve relationship issues (Note: this was not a planned step)
 - [X] Test relationships
-- [ ] Journal
+- [X] Journal
 
 ### Week 10
-- [ ] Unit test all relationships and Mockaroo API
-- [ ] Journal
+- [X] Unit test all relationships and Mockaroo API
+- [X] Journal
 
 ### Week 11: Multithreading
 - [X] Review rubric
-- [ ] Journal
+- [X] Journal
 
 ### Week 12
-- [ ] Go through all feedback from previous checkpoints & peer reviews
-- [ ] Journal
+- [X] Journal
 
 ### Week 13: Asynchronous Messaging
-- [ ] Beautify UI
-- [ ] Journal
+- [ ] Beautify UI // This did not wind up occurring due to time constraints
+- [X] Journal
 
 ### Week 14
-- [ ] Ensure full application is running to plan
-- [ ] Journal
+- [X] Attempt Action Items
+- [X] Journal
 
 ### Week 15
-- [ ] Final pieces
-- [ ] Journal
+- [X] Final pieces
+- [X] Go through all feedback from previous checkpoints & peer reviews
+- [X] Remove Action Items (incomplete)
+- [X] Journal
 
 ### Week 16
-- [ ] Journal
+- [X] Journal
